@@ -3,22 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        {% block stylesheets %}<link rel="stylesheet" href="css/style.css" {% endblock %}
-        
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        {% block stylesheets %}
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% endblock %}
     </head>
     <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -60,6 +51,122 @@
     <h1 class="text-center">Megacasting</h1>
         {% block body %}{% endblock %}
     </div>
-        {% block javascripts %}{% endblock %}
+    <!-- Footer -->
+    <footer class="page-footer font-small text-light bg-dark pt-4">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-4 mx-auto">
+
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MegaCasting</h5>
+                    <p>La meilleure agence de production !</p>
+
+                </div>
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Menu</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="#">Castings</a>
+                        </li>
+                        <li>
+                            <a href="#">Informations</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <hr>
+
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+                <h5 class="mb-1">Venez participer : </h5>
+            </li>
+            <li class="list-inline-item">
+                <a href="#!" class="btn btn-danger btn-rounded">Connexion/Inscription</a>
+            </li>
+        </ul>
+        <!-- Call to action -->
+
+        <hr>
+
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+                <a class="btn-floating btn-fb mx-1">
+                    <i class="fab fa-facebook-f"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-tw mx-1">
+                    <i class="fab fa-twitter"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-gplus mx-1">
+                    <i class="fab fa-google-plus-g"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-li mx-1">
+                    <i class="fab fa-linkedin-in"> </i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="btn-floating btn-youtube mx-1">
+                    <i class="fab fa-youtube"> </i>
+                </a>
+            </li>
+        </ul>
+        <!-- Social buttons -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright :
+            <a href="https://mdbootstrap.com/"> MegaCasting</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+        {% block javascripts %}
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
+            <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+        {% endblock %}
     </body>
 </html>

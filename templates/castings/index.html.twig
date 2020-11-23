@@ -3,127 +3,105 @@
 {% block title %}Castings{% endblock %}
 
 {% block body %}
-    <h2 class="titredescastings">Castings</h2>
-    <div class="coming">
-        <h2>Casting à venir</h2>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light navigationdumenu">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Offre de casting 1
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Postuler</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Offre de casting 2
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Postuler</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggleliendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Offre de casting 3
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Postuler</a>
-                        </div>
-                    </li>
-                </ul>
+    <h2 class="titredescastings mt-5 mb-5">Castings</h2>
+    <h4>Castings à venir</h4>
+    <div class="card-deck mt-5 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Offre de casting 1</h5>
+                <p class="card-text">Ceci est une offre de casting, la numéro une.</p>
+                <a href="#" class="btn btn-info">Postuler</a>
             </div>
-        </nav>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 7 minutes.</small>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Offre de casting 2</h5>
+                <p class="card-text">Ceci est une offre de casting, la numéro deux.</p>
+                <a href="#" class="btn btn-info">Postuler</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 4 minutes.</small>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Offre de casting 3</h5>
+                <p class="card-text">Ceci est une offre de casting, la numéro trois.</p>
+                <a href="#" class="btn btn-info">Postuler</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 1 minutes.</small>
+            </div>
+        </div>
+    </div>
+    <h4>Castings en cours</h4>
+    <div class="card-deck mt-5 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Casting 1</h5>
+                <p class="card-text">Ceci est un casting, le numéro un.</p>
+                <a href="#" class="btn btn-info">Regarder</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 1 heure.</small>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Casting 2</h5>
+                <p class="card-text">Ceci est un casting, le numéro deux.</p>
+                <a href="#" class="btn btn-info">Regarder</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 3 heures.</small>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Casting 3</h5>
+                <p class="card-text">Ceci est un casting, le numéro trois.</p>
+                <a href="#" class="btn btn-info">Regarder</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 1 heure.</small>
+            </div>
+        </div>
+    </div>
+    <h4>Castings passés</h4>
+    <div class="card-deck mt-5 mb-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Casting 1</h5>
+                <p class="card-text">Ceci est un casting, le numéro un.</p>
+                <a href="#" class="btn btn-info">Regarder</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 1 jour.</small>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Casting 2</h5>
+                <p class="card-text">Ceci est un casting, le numéro deux.</p>
+                <a href="#" class="btn btn-info">Regarder</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 3 jours.</small>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Casting 3</h5>
+                <p class="card-text">Ceci est un casting, le numéro trois.</p>
+                <a href="#" class="btn btn-info">Regarder</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-success">Dernière modification il y a 1 jour.</small>
+            </div>
+        </div>
     </div>
     <br>
-    <div class="now">
-        <h2>Castings en cours</h2>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light navigationdumenu">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Casting 1
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Regarder</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Casting 2
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Regarder</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Casting 3
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Regarder</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <div class="past">
-        <h2>Castings passés</h2>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light navigationdumenu">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Casting 1
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Regarder</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Casting 2
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Regarder</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle liendumenu" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Casting 3
-                        </a>
-                        <div class="dropdown-menu divdumenu" aria-labelledby="navbarDropdown">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe enim, tempore sed veritatis eligendi sint quam pariatur possimus. Nemo dolorem ducimus quas neque? Neque tempore illum, reiciendis ex vel voluptatibus?</p>
-                            <a class="dropdown-item" href="#">Regarder</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-    <br>
-    <footer class="footerdumenu">
-        <p class="textedufooter">MegaCasting</p>
-    </footer>
 {% endblock %}
