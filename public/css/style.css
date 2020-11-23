@@ -81,7 +81,7 @@ body{
   padding: 80px;
 }
 
-h1{
+.titredescastings{
   text-align: center;
 }
 
@@ -94,4 +94,8 @@ h1{
 .textedufooter{
   font-size: 40px;
   padding-top: 50px;
+}
+
+.card-deck .card{
+  background-color: lightgray;
 }
