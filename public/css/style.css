@@ -62,5 +62,36 @@ body{
     font-size: 20px;
     border: none;
   }
-  
-  
+
+.navigationdumenu{
+  top: 100px;
+}
+
+.divdumenu{
+  text-align: center;
+  width: 900%;
+  margin-left: -40%;
+}
+
+.liendumenu{
+  color: #000;
+}
+
+.coming, .now, .past{
+  padding: 80px;
+}
+
+h1{
+  text-align: center;
+}
+
+.footerdumenu{
+  height: 200px;
+  background-color: lightgray;
+  text-align: center;
+}
+
+.textedufooter{
+  font-size: 40px;
+  padding-top: 50px;
+}
