@@ -3,13 +3,41 @@
 {% block title %}Hello IndexController!{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/js/symp/megacasting/src/Controller/IndexController.php'|file_link(0) }}">src/Controller/IndexController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/js/symp/megacasting/templates/index/index.html.twig'|file_link(0) }}">templates/index/index.html.twig</a></code></li>
+<div class="carousel slide d-flex justify-content-center mx-0" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="text-center">
+            <h5>Une nouvelle vient d'être ajoutée</h5>
+            <p>CDD (6 mois) par Studio-9 </p>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="text-center">
+            <h5>Une nouvelle vient d'être ajoutée</h5>
+            <p>CDI (6 mois) par Studio-9 </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h3>Megacasting : comment ça marche ?</h3>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Début</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+      </li>
     </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Consulter les offres qui vous intéressent.</div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Inscrivez-vous ou connectez-vous pour pouvoir postuler.</div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Postuler avec les coodornnées données sur le casting.</div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}
