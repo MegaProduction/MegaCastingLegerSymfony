@@ -7,10 +7,10 @@ doctrine:
     #     #server_version: '13'
     
     dbal:
-        host: DESKTOP-2OH47BO\SQLEXPRESS
+        host: localhost
         driver: pdo_sqlsrv
         dbname: MegaCasting
-        user : Megprod
+        user : sa
         password : Sql2019
     orm:
             auto_generate_proxy_classes: true
