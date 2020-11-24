@@ -131,4 +131,5 @@ class Offre
     {
         return date_diff($this->dateajout, date_create('now'))->format('%i minutes');;
     }
+
 }
