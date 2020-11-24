@@ -75,7 +75,7 @@ class Offre
      *
      * @ORM\Column(name="CoordonnÃ©es", type="string", length=50, nullable=false)
      */
-    private $coordonnã©es;
+    private $coordonnï¿½es;
 
     /**
      * @var bool
@@ -111,5 +111,8 @@ class Offre
      */
     private $localisation;
 
-
+    public function getName()
+    {
+        return $this->intitule;
+    }
 }

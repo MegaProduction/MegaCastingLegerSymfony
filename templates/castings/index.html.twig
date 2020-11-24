@@ -8,7 +8,12 @@
     <div class="card-deck mt-5 mb-5">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Offre de casting 1</h5>
+                <h5 class="card-title">
+                Your name here {{ arrayOffer }}
+                {% for offre in arrayOffer %}
+                    {{ dump(offre.intitule) }}
+                {% endfor %}                
+                </h5>
                 <p class="card-text">Ceci est une offre de casting, la numéro une.</p>
                 <a href="#" class="btn btn-info">Postuler</a>
             </div>
