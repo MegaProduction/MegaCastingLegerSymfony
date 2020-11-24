@@ -14,26 +14,11 @@ class IndexController extends AbstractController
      */
     public function index(): Response
     {
+        $offre = $this->getDoctrine()->getRepository(Offre::class)
+        ->find(45);
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
+            'offre'=> $offre->getName()
         ]);
-    }
-    /**
-     * @Route("/offre/{id}", name="offre_show")
-     */
-    public function show(int $id): Response
-    {
-        $offre = $this->getDoctrine()->getRepository(Offre::class)
-        ->find($id);
-
-        if (!$offre) {
-            throw $this->createNotFoundException(
-                'No product found for id '.$id
-            );
-        }
-    return $this->render('index/index.html.twig', [
-        'controller_name' => 'IndexController',
-        'offre'=>$offre->getName()
-    ]);
     }
 }

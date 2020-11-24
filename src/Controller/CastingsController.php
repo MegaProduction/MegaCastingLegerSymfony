@@ -14,12 +14,12 @@ class CastingsController extends AbstractController
      */
     public function index(): Response
     {
-        // $offre = $this->getDoctrine()
-        // ->getRepository(Offre::class)
-        // ->findAll();
+        $offre = $this->getDoctrine()
+        ->getRepository(Offre::class)
+        ->findAll();
         return $this->render('castings/index.html.twig', [
-            array('offres' => 'test'),
-            'controller_name' => 'CastingsController'
+           'controller_name' => 'CastingsController',
+           'offres'=>$offre
         ]);
     }
 }

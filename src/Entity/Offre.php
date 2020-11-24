@@ -75,7 +75,7 @@ class Offre
      *
      * @ORM\Column(name="Coordonnées", type="string", length=50, nullable=false)
      */
-    private $coordonn�es;
+    private $coordonnées;
 
     /**
      * @var bool
@@ -114,5 +114,21 @@ class Offre
     public function getName()
     {
         return $this->intitule;
+    }
+    public function getProfil()
+    {
+        return $this->descriptionposte;
+    }
+    public function getDate()
+    {
+        return $this->dateajout->format("d/m/Y");
+    }
+    public function getIdentifiant()
+    {
+        return $this->identifiant;
+    }
+    public function CalculDateModif()
+    {
+        return date_diff($this->dateajout, date_create('now'))->format('%i minutes');;
     }
 }

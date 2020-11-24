@@ -4,109 +4,22 @@
 
 {% block body %}
     <h2 class="titredescastings mt-5 mb-5">Castings</h2>
-    <h4>Castings à venir</h4>
-    <div class="card-deck mt-5 mb-5">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">
-                Your name here {{ arrayOffer }}
-                {% for offre in arrayOffer %}
-                    {{ dump(offre.intitule) }}
-                {% endfor %}                
-                </h5>
-                <p class="card-text">Ceci est une offre de casting, la numéro une.</p>
-                <a href="#" class="btn btn-info">Postuler</a>
+        {% for offre in offres %}
+            {% if offre.getDate() <= "now"|date("d/m/Y") %}
+            <div class="card-deck mt-5 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"> 
+                            {{ offre.getName() }}      
+                        </h5>
+                        <p class="card-text">{{ offre.getProfil() }}</p>
+                        <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-success">Dernière modification il y a {{offre.CalculDateModif()}}.</small>
+                    </div>
+                </div>
             </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 7 minutes.</small>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Offre de casting 2</h5>
-                <p class="card-text">Ceci est une offre de casting, la numéro deux.</p>
-                <a href="#" class="btn btn-info">Postuler</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 4 minutes.</small>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Offre de casting 3</h5>
-                <p class="card-text">Ceci est une offre de casting, la numéro trois.</p>
-                <a href="#" class="btn btn-info">Postuler</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 1 minutes.</small>
-            </div>
-        </div>
-    </div>
-    <h4>Castings en cours</h4>
-    <div class="card-deck mt-5 mb-5">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Casting 1</h5>
-                <p class="card-text">Ceci est un casting, le numéro un.</p>
-                <a href="#" class="btn btn-info">Regarder</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 1 heure.</small>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Casting 2</h5>
-                <p class="card-text">Ceci est un casting, le numéro deux.</p>
-                <a href="#" class="btn btn-info">Regarder</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 3 heures.</small>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Casting 3</h5>
-                <p class="card-text">Ceci est un casting, le numéro trois.</p>
-                <a href="#" class="btn btn-info">Regarder</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 1 heure.</small>
-            </div>
-        </div>
-    </div>
-    <h4>Castings passés</h4>
-    <div class="card-deck mt-5 mb-5">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Casting 1</h5>
-                <p class="card-text">Ceci est un casting, le numéro un.</p>
-                <a href="#" class="btn btn-info">Regarder</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 1 jour.</small>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Casting 2</h5>
-                <p class="card-text">Ceci est un casting, le numéro deux.</p>
-                <a href="#" class="btn btn-info">Regarder</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 3 jours.</small>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Casting 3</h5>
-                <p class="card-text">Ceci est un casting, le numéro trois.</p>
-                <a href="#" class="btn btn-info">Regarder</a>
-            </div>
-            <div class="card-footer">
-                <small class="text-success">Dernière modification il y a 1 jour.</small>
-            </div>
-        </div>
-    </div>
-    <br>
+            {% endif %}
+        {% endfor %}
 {% endblock %}
