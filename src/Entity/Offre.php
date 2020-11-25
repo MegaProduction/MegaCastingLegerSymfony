@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Offre
  *
  * @ORM\Table(name="Offre", indexes={@ORM\Index(name="IDX_6E47A96BEF0582D8", columns={"IdentifiantContrat"}), @ORM\Index(name="IDX_6E47A96BA7E21577", columns={"Localisation"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\OffreRepository")
  */
 class Offre
 {
@@ -111,25 +111,155 @@ class Offre
      */
     private $localisation;
 
-    public function getName()
-    {
-        return $this->intitule;
-    }
-    public function getProfil()
-    {
-        return $this->descriptionposte;
-    }
-    public function getDate()
-    {
-        return $this->dateajout->format("d/m/Y");
-    }
-    public function getIdentifiant()
+    public function getIdentifiant(): ?int
     {
         return $this->identifiant;
     }
-    public function CalculDateModif()
+
+    public function getIntitule(): ?string
     {
-        return date_diff($this->dateajout, date_create('now'))->format('%i minutes');;
+        return $this->intitule;
     }
+
+    public function setIntitule(string $intitule): self
+    {
+        $this->intitule = $intitule;
+
+        return $this;
+    }
+
+    public function getReference(): ?int
+    {
+        return $this->reference;
+    }
+
+    public function setReference(int $reference): self
+    {
+        $this->reference = $reference;
+
+        return $this;
+    }
+
+    public function getDatedebut(): ?\DateTimeInterface
+    {
+        return $this->datedebut;
+    }
+
+    public function setDatedebut(\DateTimeInterface $datedebut): self
+    {
+        $this->datedebut = $datedebut;
+
+        return $this;
+    }
+
+    public function getDureediffusion(): ?string
+    {
+        return $this->dureediffusion;
+    }
+
+    public function setDureediffusion(?string $dureediffusion): self
+    {
+        $this->dureediffusion = $dureediffusion;
+
+        return $this;
+    }
+
+    public function getNbpostes(): ?int
+    {
+        return $this->nbpostes;
+    }
+
+    public function setNbpostes(int $nbpostes): self
+    {
+        $this->nbpostes = $nbpostes;
+
+        return $this;
+    }
+
+    public function getDescriptionposte(): ?string
+    {
+        return $this->descriptionposte;
+    }
+
+    public function setDescriptionposte(string $descriptionposte): self
+    {
+        $this->descriptionposte = $descriptionposte;
+
+        return $this;
+    }
+
+    public function getDescriptionprofil(): ?string
+    {
+        return $this->descriptionprofil;
+    }
+
+    public function setDescriptionprofil(string $descriptionprofil): self
+    {
+        $this->descriptionprofil = $descriptionprofil;
+
+        return $this;
+    }
+
+    public function getCoordonnées(): ?string
+    {
+        return $this->coordonnées;
+    }
+
+    public function setCoordonnées(string $coordonnées): self
+    {
+        $this->coordonnées = $coordonnées;
+
+        return $this;
+    }
+
+    public function getEstvalide(): ?bool
+    {
+        return $this->estvalide;
+    }
+
+    public function setEstvalide(bool $estvalide): self
+    {
+        $this->estvalide = $estvalide;
+
+        return $this;
+    }
+
+    public function getDateajout(): ?\DateTimeInterface
+    {
+        return $this->dateajout;
+    }
+
+    public function setDateajout(?\DateTimeInterface $dateajout): self
+    {
+        $this->dateajout = $dateajout;
+
+        return $this;
+    }
+
+    public function getIdentifiantcontrat(): ?Contrat
+    {
+        return $this->identifiantcontrat;
+    }
+
+    public function setIdentifiantcontrat(?Contrat $identifiantcontrat): self
+    {
+        $this->identifiantcontrat = $identifiantcontrat;
+
+        return $this;
+    }
+
+    public function getLocalisation(): ?Ville
+    {
+        return $this->localisation;
+    }
+
+    public function setLocalisation(?Ville $localisation): self
+    {
+        $this->localisation = $localisation;
+
+        return $this;
+    }
+
+    
 
 }

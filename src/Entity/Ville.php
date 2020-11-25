@@ -45,5 +45,46 @@ class Ville
      */
     private $identifiantpays;
 
+    public function getIdentifiant(): ?int
+    {
+        return $this->identifiant;
+    }
+
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    public function setLibelle(string $libelle): self
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    public function getCodepostal(): ?string
+    {
+        return $this->codepostal;
+    }
+
+    public function setCodepostal(string $codepostal): self
+    {
+        $this->codepostal = $codepostal;
+
+        return $this;
+    }
+
+    public function getIdentifiantpays(): ?Pays
+    {
+        return $this->identifiantpays;
+    }
+
+    public function setIdentifiantpays(?Pays $identifiantpays): self
+    {
+        $this->identifiantpays = $identifiantpays;
+
+        return $this;
+    }
+
 
 }

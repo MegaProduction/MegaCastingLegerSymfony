@@ -45,5 +45,46 @@ class Metier
      */
     private $identifiantdomaine;
 
+    public function getIdentifiant(): ?int
+    {
+        return $this->identifiant;
+    }
+
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    public function setLibelle(string $libelle): self
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    public function getFiche(): ?string
+    {
+        return $this->fiche;
+    }
+
+    public function setFiche(string $fiche): self
+    {
+        $this->fiche = $fiche;
+
+        return $this;
+    }
+
+    public function getIdentifiantdomaine(): ?Domaine
+    {
+        return $this->identifiantdomaine;
+    }
+
+    public function setIdentifiantdomaine(?Domaine $identifiantdomaine): self
+    {
+        $this->identifiantdomaine = $identifiantdomaine;
+
+        return $this;
+    }
+
 
 }
