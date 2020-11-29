@@ -98,3 +98,15 @@ body{
 .card-deck .card{
   background-color: lightgray;
 }
+
+html, body {
+  height: 100%;
+  margin: 0; padding: 0;
+}
+body {
+  display : table;
+  width: 100%;
+}
+footer {
+  display : table-row;
+}
