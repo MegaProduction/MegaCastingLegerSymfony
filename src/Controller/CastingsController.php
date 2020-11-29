@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Offre;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,8 +14,12 @@ class CastingsController extends AbstractController
      */
     public function index(): Response
     {
+        $offre = $this->getDoctrine()
+        ->getRepository(Offre::class)
+        ->findAll();
         return $this->render('castings/index.html.twig', [
-            'controller_name' => 'CastingsController',
+           'controller_name' => 'CastingsController',
+           'offres'=>$offre
         ]);
     }
 }
