@@ -28,5 +28,22 @@ class Domaine
      */
     private $libelle;
 
+    public function getIdentifiant(): ?int
+    {
+        return $this->identifiant;
+    }
+
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    public function setLibelle(string $libelle): self
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
 
 }

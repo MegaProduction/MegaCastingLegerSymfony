@@ -52,5 +52,58 @@ class Client
      */
     private $villeidentifiant;
 
+    public function getIdentifiant(): ?int
+    {
+        return $this->identifiant;
+    }
+
+    public function getLogin(): ?string
+    {
+        return $this->login;
+    }
+
+    public function setLogin(string $login): self
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getLibelle(): ?string
+    {
+        return $this->libelle;
+    }
+
+    public function setLibelle(string $libelle): self
+    {
+        $this->libelle = $libelle;
+
+        return $this;
+    }
+
+    public function getVilleidentifiant(): ?Ville
+    {
+        return $this->villeidentifiant;
+    }
+
+    public function setVilleidentifiant(?Ville $villeidentifiant): self
+    {
+        $this->villeidentifiant = $villeidentifiant;
+
+        return $this;
+    }
+
 
 }

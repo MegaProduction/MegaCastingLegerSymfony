@@ -5,18 +5,18 @@
 {% block body %}
     <h2 class="titredescastings mt-5 mb-5">Castings</h2>
         {% for offre in offres %}
-            {% if offre.getDate() <= "now"|date("d/m/Y") %}
+            {% if offre.getDatedebut()|date("m/d/Y") <= "now"|date("d/m/Y") %}
             <div class="card-deck mt-5 mb-5">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"> 
-                            {{ offre.getName() }}      
+                            {{ offre.getDatedebut()|date("d/m/Y") }}      
                         </h5>
-                        <p class="card-text">{{ offre.getProfil() }}</p>
+                        <p class="card-text">{{ offre.getDescriptionprofil() }}</p>
                         <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
                     </div>
                     <div class="card-footer">
-                        <small class="text-success">Dernière modification il y a {{offre.CalculDateModif()}}.</small>
+                        <small class="text-success">Dernière modification {{offre.getDateajout()|date("d/m/Y")}}.</small>
                     </div>
                 </div>
             </div>

@@ -41,5 +41,34 @@ class Postule
      */
     private $identifiantoffre;
 
+    public function getIdentifiant(): ?int
+    {
+        return $this->identifiant;
+    }
+
+    public function getIdentifiantcandidat(): ?Candidat
+    {
+        return $this->identifiantcandidat;
+    }
+
+    public function setIdentifiantcandidat(?Candidat $identifiantcandidat): self
+    {
+        $this->identifiantcandidat = $identifiantcandidat;
+
+        return $this;
+    }
+
+    public function getIdentifiantoffre(): ?Offre
+    {
+        return $this->identifiantoffre;
+    }
+
+    public function setIdentifiantoffre(?Offre $identifiantoffre): self
+    {
+        $this->identifiantoffre = $identifiantoffre;
+
+        return $this;
+    }
+
 
 }

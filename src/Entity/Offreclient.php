@@ -41,5 +41,34 @@ class Offreclient
      */
     private $identifiantoffre;
 
+    public function getIdentifiant(): ?int
+    {
+        return $this->identifiant;
+    }
+
+    public function getIdentifiantclient(): ?Client
+    {
+        return $this->identifiantclient;
+    }
+
+    public function setIdentifiantclient(?Client $identifiantclient): self
+    {
+        $this->identifiantclient = $identifiantclient;
+
+        return $this;
+    }
+
+    public function getIdentifiantoffre(): ?Offre
+    {
+        return $this->identifiantoffre;
+    }
+
+    public function setIdentifiantoffre(?Offre $identifiantoffre): self
+    {
+        $this->identifiantoffre = $identifiantoffre;
+
+        return $this;
+    }
+
 
 }
