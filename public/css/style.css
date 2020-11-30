@@ -5,10 +5,9 @@ body{
   }
   .contact-form{
     background: white;
+    margin: 0;
+    margin-top: 30px;
     width: 400px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
   }
   .header{
     width: 100%;
@@ -30,6 +29,10 @@ body{
   }
   .contact label{
     font-weight: 700;
+  }
+  .test{
+    display: flex;
+    justify-content: center;
   }
   .texti{
     width: 100%;
@@ -104,9 +107,23 @@ html, body {
   margin: 0; padding: 0;
 }
 body {
-  display : table;
   width: 100%;
 }
 footer {
-  display : table-row;
+  margin-top: 30px;
+  background-attachment: fixed;
+}
+
+.txt-body{
+  min-height: 547px;
+}
+
+.titre {
+  text-align: center;
+  font-size: 60px;
+  background: -webkit-linear-gradient(top, dimgray 30%, slategrey 70%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  padding-bottom: 5px;
 }

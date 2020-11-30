@@ -15,7 +15,7 @@ class IndexController extends AbstractController
     public function index(): Response
     {
         $offre = $this->getDoctrine()->getRepository(Offre::class)
-        ->find(16);
+        ->find(9);
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
             'offre'=> $offre->getIntitule()
