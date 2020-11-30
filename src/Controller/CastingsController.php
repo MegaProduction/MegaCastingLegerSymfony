@@ -32,6 +32,7 @@ class CastingsController extends AbstractController
         $offre = $this->getDoctrine()
         ->getRepository(Offre::class)
         ->find($id);
+//        var_dump($offre);
         return $this->render('castings/casting.html.twig', [
            'controller_name' => 'CastingsController',
            'offre'=>$offre
