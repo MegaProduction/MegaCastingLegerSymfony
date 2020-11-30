@@ -11,6 +11,7 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Offre|null findOneBy(array $criteria, array $orderBy = null)
  * @method Offre[]    findAll()
  * @method Offre[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Offre[]    findLastInsert()
  */
 class OffreRepository extends ServiceEntityRepository
 {
@@ -47,4 +48,23 @@ class OffreRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * Retourne les offres
+     *  Offre[]
+     * @return void
+     */
+    public function findLastInsert()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT o.identifiant, o.intitule
+            FROM App\Entity\Offre o
+            ORDER BY o.identifiant DESC'
+        )
+        ->setMaxResults(2);
+        return $query->getResult();
+
+    }
 }
