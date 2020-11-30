@@ -13,9 +13,11 @@ class CastingsController extends AbstractController
     /**
      * @Route("/castings", name="castings")
      */
-    public function index(OffreRepository $offreRepository): Response
+    public function index(): Response
     {
-        $offre = $offreRepository->findAll();
+        $offre =$this->getDoctrine()
+                ->getRepository(Offre::class)
+                ->findAll();
         return $this->render('castings/index.html.twig', [
            'controller_name' => 'CastingsController',
            'offres'=>$offre
@@ -23,14 +25,13 @@ class CastingsController extends AbstractController
     }
 
         /**
-     * @Route("/casting/{id}", name="castings")
+     * @Route("/casting/{id}", name="casting")
      */
     public function show(int  $id): Response
     {
         $offre = $this->getDoctrine()
         ->getRepository(Offre::class)
         ->find($id);
-        var_dump($offre);
         return $this->render('castings/casting.html.twig', [
            'controller_name' => 'CastingsController',
            'offre'=>$offre
