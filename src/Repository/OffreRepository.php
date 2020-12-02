@@ -65,6 +65,5 @@ class OffreRepository extends ServiceEntityRepository
         )
         ->setMaxResults(2);
         return $query->getResult();
-
     }
 }
