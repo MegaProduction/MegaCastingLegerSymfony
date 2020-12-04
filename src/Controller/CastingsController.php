@@ -24,7 +24,7 @@ class CastingsController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * @Route("/casting/{id}", name="casting")
      */
     public function show(int  $id): Response

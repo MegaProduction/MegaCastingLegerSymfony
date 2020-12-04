@@ -17,13 +17,13 @@
         <source>Mot de passe</source>
         <target>Password</target>
       </trans-unit>
-      <trans-unit id="aWjWsyi" resname="text.message">
-        <source>text.message</source>
-        <target>__text.message</target>
+      <trans-unit id="aWjWsyi" resname="Accepter les termes">
+        <source>Accepter les termes</source>
+        <target>Agree terms</target>
       </trans-unit>
-      <trans-unit id="hLfnUmV" resname="%message%">
-        <source>%message%</source>
-        <target>__%message%</target>
+      <trans-unit id="hLfnUmV" resname="Inscription">
+        <source>Inscription</source>
+        <target>Register</target>
       </trans-unit>
     </body>
   </file>

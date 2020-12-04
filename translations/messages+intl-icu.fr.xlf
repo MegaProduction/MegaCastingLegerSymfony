@@ -21,9 +21,13 @@
         <source>Adresse mail</source>
         <target>Adresse mail</target>
       </trans-unit>
-      <trans-unit id="hLfnUmV" resname="%message%">
-        <source>%message%</source>
-        <target>%message%</target>
+      <trans-unit id="hLfnUmV" resname="Accepter les termes">
+        <source>Accepter les termes</source>
+        <target>Accepter les termes</target>
+      </trans-unit>
+      <trans-unit id="ghguhgd" resname="Inscription">
+        <source>Inscription</source>
+        <target>Inscription</target>
       </trans-unit>
     </body>
   </file>

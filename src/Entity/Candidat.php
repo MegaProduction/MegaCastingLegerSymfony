@@ -3,14 +3,17 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Candidat
  *
  * @ORM\Table(name="Candidat")
  * @ORM\Entity
+ * @UniqueEntity(fields={"identifiant"}, message="There is already an account with this identifiant")
  */
-class Candidat
+class Candidat implements UserInterface
 {
     /**
      * @var int
@@ -121,5 +124,23 @@ class Candidat
         return $this;
     }
 
+    public function getSalt()
+    {
+        // The bcrypt and argon2i algorithms don't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
+        return null;
+    }
 
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+    public function getUsername()
+    {
+        return $this->login;
+    }
 }

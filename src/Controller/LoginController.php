@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Candidat;
 use App\Form\ConnectionType;
+use App\Form\RegistrationFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,9 +18,11 @@ class LoginController extends AbstractController
     public function index(): Response
     {
         $candidat = new Candidat();
-        $form = $this->createForm(ConnectionType::class, $candidat);
+        $formLogin = $this->createForm(ConnectionType::class, $candidat);
+        $formInsciption = $this->createForm(RegistrationFormType::class, $candidat);
         return $this->render('login/index.html.twig', [
-            'form' => $form->createView()
+            'formLogin' => $formLogin->createView(),
+            'formInsciption' => $formInsciption->createView()
         ]);
     }
 }
