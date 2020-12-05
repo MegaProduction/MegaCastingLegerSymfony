@@ -34,7 +34,7 @@ class Candidat implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="Password", type="string", length=50, nullable=false)
+     * @ORM\Column(name="Password", type="string", length=150, nullable=false)
      */
     private $password;
 
@@ -58,6 +58,20 @@ class Candidat implements UserInterface
      * @ORM\Column(name="Competence", type="string", length=50, nullable=false)
      */
     private $competence;
+
+    /**
+     * @var string[]
+     *
+     * 
+     */
+    private $roles = ['candidat'];
+
+    public function setIdentifiant(int $identifiant): self
+    {
+        $this->identifiant = $identifiant;
+
+        return $this;
+    }
 
     public function getIdentifiant(): ?int
     {
@@ -139,6 +153,7 @@ class Candidat implements UserInterface
     public function eraseCredentials()
     {
     }
+    
     public function getUsername()
     {
         return $this->login;

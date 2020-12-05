@@ -12,17 +12,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LoginController extends AbstractController
 {
-    /**
-     * @Route("/login", name="login")
-     */
-    public function index(): Response
-    {
-        $candidat = new Candidat();
-        $formLogin = $this->createForm(ConnectionType::class, $candidat);
-        $formInsciption = $this->createForm(RegistrationFormType::class, $candidat);
-        return $this->render('login/index.html.twig', [
-            'formLogin' => $formLogin->createView(),
-            'formInsciption' => $formInsciption->createView()
-        ]);
-    }
+    // /**
+    //  * @Route("/login", name="login")
+    //  */
+    // public function index(): Response
+    // {
+    //     $candidat = new Candidat();
+    //     $formLogin = $this->createForm(ConnectionType::class, $candidat);
+    //     $formInsciption = $this->createForm(RegistrationFormType::class, $candidat);
+    //     return $this->render('login/index.html.twig', [
+    //         'formLogin' => $formLogin->createView(),
+    //         'formInsciption' => $formInsciption->createView()
+    //     ]);
+    // }
 }
