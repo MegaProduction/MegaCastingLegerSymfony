@@ -2,14 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
+use App\Form\ContactFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends AbstractController
 {
@@ -18,31 +16,11 @@ class ContactController extends AbstractController
      */
     public function index(): Response
     {
+        $contact = new Contact();
+        $contactform = $this->createForm(ContactFormType::class, $contact);
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
+            'formcontact'=>$contactform->createView()
         ]);
-    }
-    public function new(Request $request): Response
-    {
-        // creates a task object and initializes some data for this example
-        $task = new Task();
-        $task->setTask('Prénom');
-        $task->setTask('Nom');
-        $task->setTask('E-mail');
-        $task->setTask('Adresse');
-        $task->setTask('Objet');
-        $task->setTask('Message');
-
-        $form = $this->createFormBuilder($task)
-            ->add('task', TextType::class)
-            ->add('task', TextType::class)
-            ->add('task', TextType::class)
-            ->add('task', TextType::class)
-            ->add('task', ChoiceType::class)
-            ->add('task', TextareaType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create Task'])
-            ->getForm();
-
-        // ...
     }
 }

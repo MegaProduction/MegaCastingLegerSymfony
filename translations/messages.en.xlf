@@ -17,13 +17,89 @@
         <source>Mot de passe</source>
         <target>Password</target>
       </trans-unit>
-      <trans-unit id="aWjWsyi" resname="Accepter les termes">
+      <trans-unit id="jnn6bhX" resname="Accepter les termes">
         <source>Accepter les termes</source>
         <target>Agree terms</target>
       </trans-unit>
-      <trans-unit id="hLfnUmV" resname="Inscription">
+      <trans-unit id="z7GsDIB" resname="Inscription">
         <source>Inscription</source>
         <target>Register</target>
+      </trans-unit>
+      <trans-unit id="aWjWsyi" resname="text.message">
+        <source>text.message</source>
+        <target>__text.message</target>
+      </trans-unit>
+      <trans-unit id="hLfnUmV" resname="%message%">
+        <source>%message%</source>
+        <target>__%message%</target>
+      </trans-unit>
+      <trans-unit id="4o_NEWp" resname="Megacasting : comment ça marche ?">
+        <source>Megacasting : comment ça marche ?</source>
+        <target>MegaCasting : how it works ?</target>
+      </trans-unit>
+      <trans-unit id="PEiqK99" resname="Début">
+        <source>Début</source>
+        <target>Begin</target>
+      </trans-unit>
+      <trans-unit id="4mfTQ4I" resname="Profil">
+        <source>Profil</source>
+        <target>Profile</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="XvJtUH8" resname="Consulter les offres qui vous intéressent.">
+        <source>Consulter les offres qui vous intéressent.</source>
+        <target>See offers that interest you.</target>
+      </trans-unit>
+      <trans-unit id="Dzl5R87" resname="Inscrivez-vous ou connectez-vous pour pouvoir postuler.">
+        <source>Inscrivez-vous ou connectez-vous pour pouvoir postuler.</source>
+        <target>Subscribe or login to apply.</target>
+      </trans-unit>
+      <trans-unit id="N9v2JYp" resname="Postuler avec les coodornnées données sur le casting.">
+        <source>Postuler avec les coodornnées données sur le casting.</source>
+        <target>Apply with contact information on the casting.</target>
+      </trans-unit>
+      <trans-unit id="UzFhc1Y" resname="Accueil">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="gvORkeR" resname="Castings">
+        <source>Castings</source>
+        <target>Castings</target>
+      </trans-unit>
+      <trans-unit id="QSvguc1" resname="Informations">
+        <source>Informations</source>
+        <target>Information</target>
+      </trans-unit>
+      <trans-unit id="qkM1cgL" resname="Connexion / Inscription">
+        <source>Connexion / Inscription</source>
+        <target>Log in / Sign in</target>
+      </trans-unit>
+      <trans-unit id="wJgg0Ru" resname="Recherchez...">
+        <source>Recherchez...</source>
+        <target>Search...</target>
+      </trans-unit>
+      <trans-unit id="HuZ75em" resname="La meilleure agence de production !">
+        <source>La meilleure agence de production !</source>
+        <target>The best production agency !</target>
+      </trans-unit>
+      <trans-unit id="jStbl5L" resname="Venez participer :">
+        <source>Venez participer :</source>
+        <target>Come join us :</target>
+      </trans-unit>
+      <trans-unit id="X7S8.WV" resname="Une nouvelle offre">
+        <source>Une nouvelle offre</source>
+        <target>A new offer</target>
+      </trans-unit>
+      <trans-unit id="KcautZd" resname="vient d'être ajoutée">
+        <source>vient d'être ajoutée</source>
+        <target>had just been added</target>
+      </trans-unit>
+      <trans-unit id="ydnSxL6" resname="par">
+        <source>par</source>
+        <target>by</target>
       </trans-unit>
     </body>
   </file>
