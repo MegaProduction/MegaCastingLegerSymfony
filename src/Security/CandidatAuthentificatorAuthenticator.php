@@ -71,7 +71,7 @@ class CandidatAuthentificatorAuthenticator extends AbstractFormLoginAuthenticato
 
         if (!$user) {
             // fail authentication with a custom error
-            throw new CustomUserMessageAuthenticationException('Login could not be found.');
+            throw new CustomUserMessageAuthenticationException('Les identifiants d\'authentification n\'ont pas pu être trouvés.');
         }
 
         return $user;
