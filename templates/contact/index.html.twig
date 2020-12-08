@@ -4,33 +4,11 @@
 
 {% block body %}
 <div class="test">
-{#    <div class="col-sm">#}
-        <div class="contact-form">
-            <form class="contact" action="../../index.html" method="post">
-                <label for="">Prénom :</label><br>
-                <input class="texti" type="text" name="" value="" placeholder="Prénom">
-                <label for="">Nom :</label><br>
-                <input class="texti" type="text" name="" value="" placeholder="Nom">
-                <label for="">E-mail :</label><br>
-                <input class="texti" type="email" name="" value="" placeholder="E-mail">
-                <label for="">Adresse :</label><br>
-                <input class="texti" type="text" name="" value="" placeholder="Adresse">
-                <label>Objet :</label><br>
-                <select class="form-control">
-                    <option>&nbsp;</option>
-                    <option>Casting "Art"</option>
-                    <option>Casting "Production"</option>
-                    <option>Casting "Spectacle"</option>
-                    <option>Casting "Théâtre"</option>
-                    <option>Casting "Cinéma"</option>
-                    <option>Autres</option>
-                </select><br>
-                <label for="">Message :</label><br>
-                <textarea class="textm" placeholder="Message"></textarea>
-                <input class="btn2" name="" type="button" value="Envoyer" />
-            </form>
-        </div>
-{#    </div>#}
+    {{ form_errors(formcontact) }}
+
+    {{ form_start(formcontact) }}
+    <h2>{% trans %}Connexion{% endtrans %}</h2>
+    {{ form_end(formcontact) }}
 </div>
 
 {% endblock %}

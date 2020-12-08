@@ -5,7 +5,7 @@
 {% block body %}
     <h2 class="titredescastings mt-5 mb-5">Castings</h2>
         {% for offre in offres %}
-            {% if offre.getDatedebut()|date("m/d/Y") <= "now"|date("d/m/Y") %}
+            {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") %}
             <div class="card-deck mt-5 mb-5">
                 <div class="card">
                     <div class="card-body">
