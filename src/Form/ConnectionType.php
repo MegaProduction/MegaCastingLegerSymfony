@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Candidat;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,6 +18,15 @@ class ConnectionType extends AbstractType
         $builder
             ->add('login', TextType::class,['label'=>"Adresse mail"])
             ->add('password', PasswordType::class, ['label'=> "Mot de passe"])
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'label' => "Accepter les termes",
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
+            ])
             ->add('save', SubmitType::class, ['label' => "Connexion"]);
     }
 
