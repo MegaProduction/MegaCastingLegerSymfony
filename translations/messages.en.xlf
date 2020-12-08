@@ -101,6 +101,14 @@
         <source>par</source>
         <target>by</target>
       </trans-unit>
+      <trans-unit id="D9o1job" resname="MegaCasting est une agence de production spécialisée dans les représentations artistiques.">
+        <source>MegaCasting est une agence de production spécialisée dans les représentations artistiques.</source>
+        <target>MegaCasting is a production agency, specialized in artistic shows.</target>
+      </trans-unit>
+      <trans-unit id="IaAyjrK" resname="Notre champ d'actions couvre une grande partie des capacités artistiques que peuvent produire un humain.">
+        <source>Notre champ d'actions couvre une grande partie des capacités artistiques que peuvent produire un humain.</source>
+        <target>Our scope cover a large part of all artistic capacities that can produce a human.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
