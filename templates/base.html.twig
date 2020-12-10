@@ -22,21 +22,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">{% trans %}Accueil{% endtrans %}<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('index') }}">{% trans %}Accueil{% endtrans %}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link " href="/castings">
+                    <a class="nav-link " href="{{ path('castings') }}">
                         {% trans %}Castings{% endtrans %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/informations">{% trans %}Informations{% endtrans %}</a>
+                    <a class="nav-link" href="{{ path('informations') }}">{% trans %}Informations{% endtrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/contact">{% trans %}Contact{% endtrans %}</a>
+                    <a class="nav-link" href="{{ path('contact') }}">{% trans %}Contact{% endtrans %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                    <a class="nav-link" href="{{ path('app_login') }}">{% trans %}Connexion{% endtrans %}</a>
                 {% for locale in locales %}
                     {% if locale != app.request.locale %}
                         <li class="nav-item">
@@ -46,7 +46,7 @@
                 {% endfor %}
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Recherchez..."
+                <input class="form-control mr-sm-2" type="search" placeholder="{% trans %}Recherchez...{% endtrans %}"
                     aria-label="Recherchez...">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{% trans %}Recherchez...{% endtrans %}</button>
             </form>
@@ -68,16 +68,16 @@
                     <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Menu</h5>
                     <ul class="list-unstyled">
                         <li>
-                            <a href="#">{% trans %}Accueil{% endtrans %}</a>
+                            <a href="{{ path('index') }}">{% trans %}Accueil{% endtrans %}</a>
                         </li>
                         <li>
-                            <a href="#">{% trans %}Castings{% endtrans %}</a>
+                            <a href="{{ path('castings') }}">{% trans %}Castings{% endtrans %}</a>
                         </li>
                         <li>
-                            <a href="#">{% trans %}Informations{% endtrans %}</a>
+                            <a href="{{ path('informations') }}">{% trans %}Informations{% endtrans %}</a>
                         </li>
                         <li>
-                            <a href="#">{% trans %}Contact{% endtrans %}</a>
+                            <a href="{{ path('contact') }}">{% trans %}Contact{% endtrans %}</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +89,7 @@
                 <h5 class="mb-1">{% trans %}Venez participer : {% endtrans %}</h5>
             </li>
             <li class="list-inline-item">
-                <a href="#!" class="btn btn-danger btn-rounded">{% trans %}Connexion / Inscription{% endtrans %}</a>
+                <a href="{{ path('app_login') }}" class="btn btn-danger btn-rounded">{% trans %}Connexion{% endtrans %}</a>
             </li>
         </ul>
         <hr>
