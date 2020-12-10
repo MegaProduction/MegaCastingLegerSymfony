@@ -101,6 +101,26 @@
         <source>par</source>
         <target>par</target>
       </trans-unit>
+      <trans-unit id="1" resname="Vous êtes connecté en tant que">
+        <source>Vous êtes connecté en tant que</source>
+        <target>Vous êtes connecté en tant que</target>
+      </trans-unit>
+      <trans-unit id="2" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="3" resname="S'identifier">
+        <source>S'identifier</source>
+        <target>S'identifier</target>
+      </trans-unit>
+      <trans-unit id="4" resname="Veuillez vous connecter">
+        <source>Veuillez vous connecter</source>
+        <target>Veuillez vous connecter</target>
+      </trans-unit>
+      <trans-unit id="5" resname="Se connecter">
+        <source>Se connecter</source>
+        <target>Se connecter</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
