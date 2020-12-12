@@ -73,9 +73,9 @@
         <source>Informations</source>
         <target>Informations</target>
       </trans-unit>
-      <trans-unit id="qkM1cgL" resname="Connexion / Inscription">
-        <source>Connexion / Inscription</source>
-        <target>Connexion / Inscription</target>
+      <trans-unit id="qkM1cgL" resname="Connexion">
+        <source>Connexion </source>
+        <target>Connexion</target>
       </trans-unit>
       <trans-unit id="wJgg0Ru" resname="Recherchez...">
         <source>Recherchez...</source>
@@ -120,6 +120,7 @@
       <trans-unit id="5" resname="Se connecter">
         <source>Se connecter</source>
         <target>Se connecter</target>
+      </trans-unit>
       <trans-unit id="D9o1job" resname="MegaCasting est une agence de production spécialisée dans les représentations artistiques.">
         <source>MegaCasting est une agence de production spécialisée dans les représentations artistiques.</source>
         <target>MegaCasting est une agence de production spécialisée dans les représentations artistiques.</target>

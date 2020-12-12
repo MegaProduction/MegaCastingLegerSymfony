@@ -3,11 +3,17 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-    <h2 class="titredescastings mt-5 mb-5">Casting</h2>
-    <p>{{ offre.intitule }} </p>
-        
-    <p> {{ offre.datedebut|date("d/m/Y") }} </p>
-    <p>{{ offre.getLocalisation().libelle}} </p>
-    <p> </p>
+    <div class="row">
+        <div class="col-lg-1-12">
+            <article class="lead"> 
+                <h2 class="titredescastings mt-5 mb-5">Casting</h2>
+                <p>Casting : {{ offre.intitule }}</p>
+                <p>Le {{ offre.datedebut|date("d/m/Y") }}</p>
+                <p>Lieu du casting : {{ offre.getLocalisation().libelle}}</p>
+                <p>Description du profil : {{ offre.getDescriptionProfil() }}</p>
+            </article>
+        </div>
+    </div>
+    
         
 {% endblock %}
