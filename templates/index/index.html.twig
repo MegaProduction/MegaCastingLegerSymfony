@@ -8,8 +8,8 @@
     <div class="carousel-item active">
      {% for key in offre|slice(0, 1) %}
         <div class="text-center">
-            <h5>Une nouvelle offre ({{ key.intitule }}) vient d'être ajoutée</h5>
-            <p>CDD (6 mois) par Studio-9 </p>
+            <h5>{% trans %}Une nouvelle offre {% endtrans %}({{ key.intitule }}){% trans %} vient d'être ajoutée{% endtrans %}</h5>
+            <p>{{ key.libelle }} {% trans %} par {% endtrans %} {{ key.client}} </p>
             <a class="btn btn-info" href="/casting/{{ key.identifiant }}">Voir les détails ...</a>
         </div>
      {% endfor %}
@@ -17,8 +17,8 @@
     <div class="carousel-item">
         {% for key in offre|slice(1, 1) %}
         <div class="text-center">
-            <h5>Une nouvelle offre ({{ key.intitule }}) vient d'être ajoutée</h5>
-            <p>CDD (6 mois) par Studio-9 </p>
+            <h5>{% trans %}Une nouvelle offre {% endtrans %}({{ key.intitule }}){% trans %} vient d'être ajoutée{% endtrans %}</h5>
+            <p>{{ key.libelle }} {% trans %} par {% endtrans %} {{ key.client}} </p>
             <a class="btn btn-info" href="/casting/{{ key.identifiant }}">Voir les détails ...</a>
         </div>
         {% endfor %}
@@ -26,22 +26,22 @@
     </div>
   </div> 
   <div>
-    <h3>Megacasting : comment ça marche ?</h3>
+    <h3>{% trans %}Megacasting : comment ça marche ?{% endtrans %}</h3>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Début</a>
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{% trans %}Début{% endtrans %}</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">{% trans %}Profil{% endtrans %}</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">{% trans %}Contact{% endtrans %}</a>
       </li>
     </ul>
     <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Consulter les offres qui vous intéressent.</div>
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Inscrivez-vous ou connectez-vous pour pouvoir postuler.</div>
-      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Postuler avec les coodornnées données sur le casting.</div>
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{% trans %}Consulter les offres qui vous intéressent.{% endtrans %}</div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{% trans %}Inscrivez-vous ou connectez-vous pour pouvoir postuler.{% endtrans %}</div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">{% trans %}Postuler avec les coodornnées données sur le casting.{% endtrans %}</div>
     </div>
   </div>
 </div>

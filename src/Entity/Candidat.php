@@ -3,14 +3,17 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * Candidat
  *
  * @ORM\Table(name="Candidat")
  * @ORM\Entity
+ * @UniqueEntity(fields={"identifiant"}, message="There is already an account with this identifiant")
  */
-class Candidat
+class Candidat implements UserInterface
 {
     /**
      * @var int
@@ -31,7 +34,7 @@ class Candidat
     /**
      * @var string
      *
-     * @ORM\Column(name="Password", type="string", length=50, nullable=false)
+     * @ORM\Column(name="Password", type="string", length=150, nullable=false)
      */
     private $password;
 
@@ -55,6 +58,20 @@ class Candidat
      * @ORM\Column(name="Competence", type="string", length=50, nullable=false)
      */
     private $competence;
+
+    /**
+     * @var string[]
+     *
+     * 
+     */
+    private $roles = ['candidat'];
+
+    public function setIdentifiant(int $identifiant): self
+    {
+        $this->identifiant = $identifiant;
+
+        return $this;
+    }
 
     public function getIdentifiant(): ?int
     {
@@ -121,5 +138,24 @@ class Candidat
         return $this;
     }
 
+    public function getSalt()
+    {
+        // The bcrypt and argon2i algorithms don't require a separate salt.
+        // You *may* need a real salt if you choose a different encoder.
+        return null;
+    }
 
+    public function getRoles()
+    {
+        return $this->roles;
+    }
+
+    public function eraseCredentials()
+    {
+    }
+    
+    public function getUsername()
+    {
+        return $this->login;
+    }
 }

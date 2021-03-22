@@ -4,22 +4,25 @@
 
 {% block body %}
     <h2 class="titredescastings mt-5 mb-5">Castings</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for offre in offres %}
-            {% if offre.getDatedebut()|date("m/d/Y") <= "now"|date("d/m/Y") %}
-            <div class="card-deck mt-5 mb-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"> 
-                            {{ offre.getDatedebut()|date("d/m/Y") }}      
-                        </h5>
-                        <p class="card-text">{{ offre.getDescriptionprofil() }}</p>
-                        <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-success">Dernière modification {{offre.getDateajout()|date("d/m/Y")}}.</small>
+            {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") and offre.getEstvalide() == true %}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ asset('img/casting.png') }}" class="card-img-top" alt="logo casting">
+                        <div class="card-body">
+                            <h5 class="card-title"> 
+                                {{ offre.getIntitule() }}      
+                            </h5>
+                            <p class="card-text">{{ offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") }}</p>
+                            <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-success">Dernière modification {{offre.getDateajout()|date("d/m/Y")}}.</small>
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endif %}
         {% endfor %}
+    </div>
 {% endblock %}

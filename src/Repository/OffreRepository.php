@@ -11,7 +11,6 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Offre|null findOneBy(array $criteria, array $orderBy = null)
  * @method Offre[]    findAll()
  * @method Offre[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- * @method Offre[]    findLastInsert()
  */
 class OffreRepository extends ServiceEntityRepository
 {
@@ -58,13 +57,15 @@ class OffreRepository extends ServiceEntityRepository
     {
         $entityManager = $this->getEntityManager();
 
-        $query = $entityManager->createQuery(
-            'SELECT o.identifiant, o.intitule
-            FROM App\Entity\Offre o
-            ORDER BY o.identifiant DESC'
-        )
-        ->setMaxResults(2);
+        $query = $entityManager->createQueryBuilder()
+            ->select('o.identifiant, o.intitule, c.libelle, cl.libelle as client')
+            ->from('App\Entity\Offre', 'o')
+            ->innerJoin('App\Entity\Contrat', 'c', 'WITH', 'o.identifiantcontrat = c.identifiant')
+            ->innerJoin('App\Entity\Offreclient', 'oc', 'WITH', 'o.identifiant = oc.identifiantoffre')
+            ->innerJoin('App\Entity\Client', 'cl', 'WITH', 'oc.identifiantclient = cl.identifiant')
+            ->orderBy('o.identifiant', 'DESC')
+            ->setMaxResults(2)
+            ->getQuery();
         return $query->getResult();
-
     }
 }

@@ -5,128 +5,144 @@
         <link rel="icon" type="image/png" href="https://i.goopics.net/0Ja5w.png"/>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <!-- Bootstrap CSS -->
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-                  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            <link rel="stylesheet" href="css/style.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         {% endblock %}
     </head>
-    <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link " href="/castings">
-                        Castings
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/informations">Informations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Connexion /
-                        <br>Inscription</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Recherchez..."
-                    aria-label="Recherchez...">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherchez...</button>
-            </form>
-        </div>
-    </nav>
-    <div class="container txt-body">
-    <h1 class="text-center titre">Megacasting</h1>
-        {% block body %}{% endblock %}
-    </div>
-    <footer class="page-footer font-small text-light bg-dark pt-4 sticky-bottom">
-        <div class="container text-center text-md-left">
-            <div class="row">
-                <div class="col-md-4 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MegaCasting</h5>
-                    <p>La meilleure agence de production !</p>
-                </div>
-                <hr class="clearfix w-100 d-md-none">
-                <div class="col-md-2 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Menu</h5>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#">Accueil</a>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarToggleExternalContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a id="index" class="nav-link active" href="{{ path('index') }}">{% trans %}Accueil{% endtrans %}</a>
                         </li>
-                        <li>
-                            <a href="#">Castings</a>
+                        <li class="nav-item">
+                            <a id="castings" class="nav-link" href="{{ path('castings') }}">
+                                {% trans %}Castings{% endtrans %}
+                            </a>
                         </li>
-                        <li>
-                            <a href="#">Informations</a>
+                        <li class="nav-item">
+                            <a id="informations" class="nav-link" href="{{ path('informations') }}">{% trans %}Informations{% endtrans %}</a>
                         </li>
-                        <li>
-                            <a href="#">Contact</a>
+                        <li class="nav-item">
+                            <a id="contact" class="nav-link" href="{{ path('contact') }}">{% trans %}Contact{% endtrans %}</a>
                         </li>
+                        <li class="nav-item">
+                            <a id="login" class="nav-link" href="{{ path('app_login') }}">{% trans %}Connexion{% endtrans %}</a>
+                        </li>
+                        {% for locale in locales %}
+                            {% if locale != app.request.locale %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ path('change_local', {'local': locale}) }}">
+                                        <img src="{{ asset('img/'~locale~'.png') }}" class="img-fluid w-25" alt="{{ locale }}">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="{% trans %}Recherchez...{% endtrans %}"
+                            aria-label="Recherchez...">
+                        <button class="btn btn-outline-success my-2 my-sm-0"
+                            type="submit">{% trans %}Recherchez...{% endtrans %}</button>
+                    </form>
                 </div>
             </div>
+        </nav>
+        <div class="container txt-body">
+            <h1 class="text-center titre">Megacasting</h1>
+            {% block body %}{% endblock %}
         </div>
-        <hr>
-        <ul class="list-unstyled list-inline text-center py-2">
-            <li class="list-inline-item">
-                <h5 class="mb-1">Venez participer : </h5>
-            </li>
-            <li class="list-inline-item">
-                <a href="#!" class="btn btn-danger btn-rounded">Connexion/Inscription</a>
-            </li>
-        </ul>
-        <hr>
-        <ul class="list-unstyled list-inline text-center">
-            <li class="list-inline-item">
-                <a class="btn-floating btn-fb mx-1">
-                    <i class="fab fa-facebook-f"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-tw mx-1">
-                    <i class="fab fa-twitter"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-gplus mx-1">
-                    <i class="fab fa-google-plus-g"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-li mx-1">
-                    <i class="fab fa-linkedin-in"> </i>
-                </a>
-            </li>
-            <li class="list-inline-item">
-                <a class="btn-floating btn-youtube mx-1">
-                    <i class="fab fa-youtube"> </i>
-                </a>
-            </li>
-        </ul>
-        <div class="footer-copyright text-center py-3">© 2020 Copyright :
-            <a href="https://mdbootstrap.com/"> MegaCasting</a>
-        </div>
-    </footer>
-    {% block javascripts %}
-        
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <footer class="page-footer font-small text-light bg-dark pt-4 py-5 ">
+            <div class="container text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-4 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">MegaCasting</h5>
+                        <p>{% trans %}La meilleure agence de production !{% endtrans %}</p>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none">
+                    <div class="col-md-2 mx-auto">
+                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Menu</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ path('index') }}">{% trans %}Accueil{% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('castings') }}">{% trans %}Castings{% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('informations') }}">{% trans %}Informations{% endtrans %}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contact') }}">{% trans %}Contact{% endtrans %}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <h5 class="mb-1">{% trans %}Venez participer : {% endtrans %}</h5>
+                </li>
+                <li class="list-inline-item">
+                    <a href="{{ path('app_login') }}"
+                        class="btn btn-danger btn-rounded">{% trans %}Connexion{% endtrans %}</a>
+                </li>
+            </ul>
+            <hr>
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-fb mx-1">
+                        <i class="fab fa-facebook-f"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1">
+                        <i class="fab fa-twitter"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-gplus mx-1">
+                        <i class="fab fa-google-plus-g"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-li mx-1">
+                        <i class="fab fa-linkedin-in"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-youtube mx-1">
+                        <i class="fab fa-youtube"> </i>
+                    </a>
+                </li>
+            </ul>
+            <div class="footer-copyright text-center py-3">© 2020 Copyright :
+                <a href="/"> MegaCasting</a>
+            </div>
+        </footer>
+        {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+            integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+            integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous">
+        </script>
         <script src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"></script>
-    {% endblock %}
+        <script src={{ asset('script/index.js') }}></script>
+        {% endblock %}
     </body>
+
 </html>
