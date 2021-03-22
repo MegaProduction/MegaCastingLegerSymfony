@@ -38,7 +38,7 @@
                         <a id="contact" class="nav-link" href="{{ path('contact') }}">{% trans %}Contact{% endtrans %}</a>
                     </li>
                     <li class="nav-item">
-                        <a id="" class="nav-link" href="{{ path('app_login') }}">{% trans %}Connexion{% endtrans %}</a>
+                        <a id="login" class="nav-link" href="{{ path('app_login') }}">{% trans %}Connexion{% endtrans %}</a>
                     </li>
                     {% for locale in locales %}
                         {% if locale != app.request.locale %}
