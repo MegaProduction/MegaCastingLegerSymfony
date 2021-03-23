@@ -29,9 +29,9 @@ class Ville
     private $libelle;
 
     /**
-     * @var string
+     * @var string|null
      *
-     * @ORM\Column(name="CodePostal", type="string", length=10, nullable=false)
+     * @ORM\Column(name="CodePostal", type="string", length=15, nullable=true)
      */
     private $codepostal;
 
@@ -67,7 +67,7 @@ class Ville
         return $this->codepostal;
     }
 
-    public function setCodepostal(string $codepostal): self
+    public function setCodepostal(?string $codepostal): self
     {
         $this->codepostal = $codepostal;
 

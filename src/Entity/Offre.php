@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Offre
  *
- * @ORM\Table(name="Offre", indexes={@ORM\Index(name="IDX_6E47A96BEF0582D8", columns={"IdentifiantContrat"}), @ORM\Index(name="IDX_6E47A96BA7E21577", columns={"Localisation"})})
- * @ORM\Entity(repositoryClass="App\Repository\OffreRepository")
+ * @ORM\Table(name="Offre", indexes={@ORM\Index(name="IDX_6E47A96BEF0582D8", columns={"IdentifiantContrat"}), @ORM\Index(name="IDX_6E47A96B525B950", columns={"IdentifiantMetier"}), @ORM\Index(name="IDX_6E47A96BA7E21577", columns={"Localisation"})})
+ * @ORM\Entity
  */
 class Offre
 {
@@ -75,7 +75,7 @@ class Offre
      *
      * @ORM\Column(name="CoordonnÃ©es", type="string", length=50, nullable=false)
      */
-    private $coordonnÃ©es;
+    private $coordonnã©es;
 
     /**
      * @var bool
@@ -100,6 +100,16 @@ class Offre
      * })
      */
     private $identifiantcontrat;
+
+    /**
+     * @var \Metier
+     *
+     * @ORM\ManyToOne(targetEntity="Metier")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="IdentifiantMetier", referencedColumnName="Identifiant")
+     * })
+     */
+    private $identifiantmetier;
 
     /**
      * @var \Ville
@@ -200,14 +210,14 @@ class Offre
         return $this;
     }
 
-    public function getCoordonnÃ©es(): ?string
+    public function getCoordonnã©es(): ?string
     {
-        return $this->coordonnÃ©es;
+        return $this->coordonnã©es;
     }
 
-    public function setCoordonnÃ©es(string $coordonnÃ©es): self
+    public function setCoordonnã©es(string $coordonnã©es): self
     {
-        $this->coordonnÃ©es = $coordonnÃ©es;
+        $this->coordonnã©es = $coordonnã©es;
 
         return $this;
     }
@@ -248,6 +258,18 @@ class Offre
         return $this;
     }
 
+    public function getIdentifiantmetier(): ?Metier
+    {
+        return $this->identifiantmetier;
+    }
+
+    public function setIdentifiantmetier(?Metier $identifiantmetier): self
+    {
+        $this->identifiantmetier = $identifiantmetier;
+
+        return $this;
+    }
+
     public function getLocalisation(): ?Ville
     {
         return $this->localisation;
@@ -260,6 +282,5 @@ class Offre
         return $this;
     }
 
-    
 
 }

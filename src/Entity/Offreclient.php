@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Offreclient
  *
- * @ORM\Table(name="OffreClient", indexes={@ORM\Index(name="IDX_9B6685B393C1B089", columns={"IdentifiantClient"}), @ORM\Index(name="IDX_9B6685B3F4657399", columns={"IdentifiantOffre"})})
+ * @ORM\Table(name="OffreClient", indexes={@ORM\Index(name="IDX_9B6685B393C1B089", columns={"IdentifiantClient"})})
  * @ORM\Entity
  */
 class Offreclient
@@ -22,6 +22,13 @@ class Offreclient
     private $identifiant;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="IdentifiantOffre", type="integer", nullable=false)
+     */
+    private $identifiantoffre;
+
+    /**
      * @var \Client
      *
      * @ORM\ManyToOne(targetEntity="Client")
@@ -31,19 +38,21 @@ class Offreclient
      */
     private $identifiantclient;
 
-    /**
-     * @var \Offre
-     *
-     * @ORM\ManyToOne(targetEntity="Offre")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="IdentifiantOffre", referencedColumnName="Identifiant")
-     * })
-     */
-    private $identifiantoffre;
-
     public function getIdentifiant(): ?int
     {
         return $this->identifiant;
+    }
+
+    public function getIdentifiantoffre(): ?int
+    {
+        return $this->identifiantoffre;
+    }
+
+    public function setIdentifiantoffre(int $identifiantoffre): self
+    {
+        $this->identifiantoffre = $identifiantoffre;
+
+        return $this;
     }
 
     public function getIdentifiantclient(): ?Client
@@ -54,18 +63,6 @@ class Offreclient
     public function setIdentifiantclient(?Client $identifiantclient): self
     {
         $this->identifiantclient = $identifiantclient;
-
-        return $this;
-    }
-
-    public function getIdentifiantoffre(): ?Offre
-    {
-        return $this->identifiantoffre;
-    }
-
-    public function setIdentifiantoffre(?Offre $identifiantoffre): self
-    {
-        $this->identifiantoffre = $identifiantoffre;
 
         return $this;
     }

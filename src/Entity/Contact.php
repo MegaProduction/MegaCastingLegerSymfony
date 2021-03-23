@@ -2,111 +2,143 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Contact
+ *
+ * @ORM\Table(name="Contact")
+ * @ORM\Entity
+ */
 class Contact
 {
-    private $firstName;
-    private $name;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Identifiant", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $identifiant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Prenom", type="string", length=50, nullable=false)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nom", type="string", length=50, nullable=false)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Mail", type="string", length=0, nullable=false)
+     */
     private $mail;
-    private $address;
-    private $object;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Adresse", type="string", length=0, nullable=false)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Objet", type="string", length=0, nullable=false)
+     */
+    private $objet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Message", type="string", length=0, nullable=false)
+     */
     private $message;
 
-
-    /**
-     * @return firstName
-     */
-    public function getFirstName()
+    public function getIdentifiant(): ?int
     {
-        return $this->firstName;
+        return $this->identifiant;
     }
 
-    /**
-     * @param $firstName
-     */
-    public function setFirstName($firstName): void
+    public function getPrenom(): ?string
     {
-        $this->firstName = $firstName;
+        return $this->prenom;
     }
 
-    /**
-     * @return name
-     */
-    public function getName()
+    public function setPrenom(string $prenom): self
     {
-        return $this->name;
+        $this->prenom = $prenom;
+
+        return $this;
     }
 
-    /**
-     * @param $name
-     */
-    public function setName($name): void
+    public function getNom(): ?string
     {
-        $this->name = $name;
+        return $this->nom;
     }
 
-    /**
-     * @return mail
-     */
-    public function getMail()
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getMail(): ?string
     {
         return $this->mail;
     }
 
-    /**
-     * @param $mail
-     */
-    public function setMail($mail): void
+    public function setMail(string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
     }
 
-    /**
-     * @return address
-     */
-    public function getAddress()
+    public function getAdresse(): ?string
     {
-        return $this->address;
+        return $this->adresse;
     }
 
-    /**
-     * @param $address
-     */
-    public function setAddress($address): void
+    public function setAdresse(string $adresse): self
     {
-        $this->address = $address;
+        $this->adresse = $adresse;
+
+        return $this;
     }
 
-    /**
-     * @return object
-     */
-    public function getObject()
+    public function getObjet(): ?string
     {
-        return $this->object;
+        return $this->objet;
     }
 
-    /**
-     * @param $object
-     */
-    public function setObject($object): void
+    public function setObjet(string $objet): self
     {
-        $this->object = $object;
+        $this->objet = $objet;
+
+        return $this;
     }
 
-    /**
-     * @return message
-     */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->message;
     }
 
-    /**
-     * @param $message
-     */
-    public function setMessage($message): void
+    public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
     }
+
+
 }
