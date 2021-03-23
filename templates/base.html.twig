@@ -56,9 +56,10 @@
                         <button class="btn btn-outline-success my-2 my-sm-0"
                             type="submit"><i class="fas fa-search"></i></button>
                     </form>
+                    <span class="text-white me-3 ms-3"></span>
                     {% if app.user %}
                     <div class="align-items-center">
-                        <p class="text-info mb-0 ms-1">Connecté en tant que : {{ app.user.username }}</p>
+                        <p class="text-info mb-0 ms-1"><i class="far fa-user-circle fs-3"></i> {{ app.user.username }}</p>
                     </div>
                     {% endif %}
                 </div>
