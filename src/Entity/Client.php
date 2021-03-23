@@ -29,9 +29,9 @@ class Client
     private $login;
 
     /**
-     * @var string
+     * @var string|null
      *
-     * @ORM\Column(name="Password", type="string", length=50, nullable=false)
+     * @ORM\Column(name="Password", type="string", length=300, nullable=true)
      */
     private $password;
 
@@ -74,7 +74,7 @@ class Client
         return $this->password;
     }
 
-    public function setPassword(string $password): self
+    public function setPassword(?string $password): self
     {
         $this->password = $password;
 
