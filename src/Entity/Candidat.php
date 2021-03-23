@@ -121,5 +121,9 @@ class Candidat
         return $this;
     }
 
+    public function __toString(){
+        // Or change the property that you want to show in the select.
+        return $this->login;
+    }
 
 }
