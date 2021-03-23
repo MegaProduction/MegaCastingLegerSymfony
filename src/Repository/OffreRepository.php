@@ -53,7 +53,7 @@ class OffreRepository extends ServiceEntityRepository
      *  Offre[]
      * @return void
      */
-    public function findLastInsert()
+    public function LastInsert()
     {
         $entityManager = $this->getEntityManager();
 
