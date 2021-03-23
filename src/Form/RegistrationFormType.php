@@ -12,6 +12,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class RegistrationFormType extends AbstractType
 {
@@ -22,15 +24,6 @@ class RegistrationFormType extends AbstractType
             ->add('Firstname', TextType::class,['label'=>"Prénom"])
             ->add('Lastname', TextType::class,['label'=>"Nom"])
             ->add('Competence', TextType::class,['label'=>"Compétence"])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'label' => "Accepter les termes",
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
-                ],
-            ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
@@ -48,7 +41,16 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-        ;
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'label' => "Accepter les termes",
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'You should agree to our terms.',
+                    ]),
+                ],
+            ])
+            ->add('save', SubmitType::class, ['label' => "Connexion"]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

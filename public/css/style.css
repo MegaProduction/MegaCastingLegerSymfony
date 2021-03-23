@@ -83,10 +83,6 @@ body{
   padding: 80px;
 }
 
-.titredescastings{
-  text-align: center;
-}
-
 .footerdumenu{
   height: 200px;
   background-color: lightgray;
@@ -127,11 +123,7 @@ footer {
   color: transparent;
   padding-bottom: 5px;
 }
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
+.casting{
+  border: 1px solid;
+  
 }

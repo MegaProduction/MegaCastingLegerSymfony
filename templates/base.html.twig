@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="https://i.goopics.net/0Ja5w.png"/>
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Accueil{% endblock %}</title>
         {% block stylesheets %}
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href={{ asset('css/style.css') }}>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         {% endblock %}
     </head>
@@ -43,7 +43,7 @@
                         {% for locale in locales %}
                             {% if locale != app.request.locale %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('change_local', {'local': locale}) }}">
+                                    <a class="nav-link p-0 d-inline" href="{{ path('change_local', {'local': locale}) }}">
                                         <img src="{{ asset('img/'~locale~'.png') }}" class="img-fluid w-25" alt="{{ locale }}">
                                     </a>
                                 </li>
@@ -54,8 +54,11 @@
                         <input class="form-control me-2" type="search" placeholder="{% trans %}Recherchez...{% endtrans %}"
                             aria-label="Recherchez...">
                         <button class="btn btn-outline-success my-2 my-sm-0"
-                            type="submit">{% trans %}Recherchez...{% endtrans %}</button>
+                            type="submit"><i class="fas fa-search"></i></button>
                     </form>
+                    <div class="align-items-center">
+                        <p class="text-info mb-0 ms-1">Connecté en tant que : {{ app.user.username }}</p>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -142,6 +145,7 @@
         </script>
         <script src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"></script>
         <script src={{ asset('script/index.js') }}></script>
+        <script src={{ asset('script/carousel.js') }}></script>
         {% endblock %}
     </body>
 

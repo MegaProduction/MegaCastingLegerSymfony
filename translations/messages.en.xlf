@@ -129,6 +129,10 @@
         <source>Notre champ d'actions couvre une grande partie des capacités artistiques que peuvent produire un humain.</source>
         <target>Our scope cover a large part of all artistic capacities that can produce a human.</target>
       </trans-unit>
+      <trans-unit id="yfo_itgupr" resname="Nom d'utilisateur">
+        <source>Nom d'utilisateur</source>
+        <target>Login</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
