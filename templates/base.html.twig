@@ -51,7 +51,7 @@
                         {% endfor %}
                     </ul>
                     {# <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="{% trans %}Recherchez...{% endtrans %}"
+                        <input class="form-control me-2" type="search" placeholder="{% trans %}Fait {% endtrans %}{% trans %}ici {% endtrans %}{% trans %}votre {% endtrans %}{% trans %}Recherche.{% endtrans %}"
                             aria-label="Recherchez...">
                         <button class="btn btn-outline-success my-2 my-sm-0"
                             type="submit"><i class="fas fa-search"></i></button>
@@ -63,7 +63,8 @@
                                 <i class="far fa-user-circle fs-3"></i> {{ app.user.username }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="{{ path('edit_member') }}">Espace membre <i class="fas fa-user-edit"></i></a></li>
+                                <li><a class="dropdown-item text-left text-wrap" href="{{ path('app_logout') }}">Se déconnecter <i class="fas fa-sign-out-alt"></i></a></li>
                             </ul>
                         </div>
                     </div>
