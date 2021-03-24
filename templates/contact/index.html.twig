@@ -3,19 +3,10 @@
 {% block title %}MegaCasting | Contact{% endblock %}
 
 {% block body %}
-<div class="test">
     {{ form_errors(formcontact) }}
 
     {{ form_start(formcontact) }}
-    <h2>{% trans %}Contact{% endtrans %}</h2>
-    {{ form_row(formcontact.firstName) }}
-    {{ form_row(formcontact.name) }}
-    {{ form_row(formcontact.mail) }}
-    {{ form_row(formcontact.address) }}
-    {{ form_row(formcontact.object) }}
-    {{ form_row(formcontact.message) }}
-    {{ form_row(formcontact.save) }}
+    <h2 class="mb-5">{% trans %}Contact{% endtrans %}</h2>
     {{ form_end(formcontact) }}
-</div>
 
 {% endblock %}
