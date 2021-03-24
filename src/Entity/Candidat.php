@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Candidat
  *
  * @ORM\Table(name="Candidat")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\CandidatRepository")
  * @UniqueEntity(fields={"identifiant"}, message="There is already an account with this identifiant")
  */
 class Candidat implements UserInterface
