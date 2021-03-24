@@ -133,6 +133,26 @@
         <source>Nom d'utilisateur</source>
         <target>Nom d'utilisateur</target>
       </trans-unit>
+        <trans-unit id="sfdgfhetyr" resname="Nom">
+          <source>Nom</source>
+          <target>Nom</target>
+        </trans-unit>
+        <trans-unit id="esrgrhtytjyuiu" resname="Prénom">
+          <source>Prénom</source>
+          <target>Prénom</target>
+        </trans-unit>
+        <trans-unit id="ekdrjgbgnzorelh" resname="Adresse">
+          <source>Adresse</source>
+          <target>Adresse</target>
+        </trans-unit>
+        <trans-unit id="sqefgdfhjh" resname="Objet">
+          <source>Objet</source>
+          <target>Objet</target>
+        </trans-unit>
+        <trans-unit id="fertyhftghytj" resname="Envoyer">
+          <source>Envoyer</source>
+          <target>Envoyer</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>
