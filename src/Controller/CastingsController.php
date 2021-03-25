@@ -29,9 +29,11 @@ class CastingsController extends AbstractController
             $search = $offreResearchForm["intitule"]->getData();
             $order = $offreResearchForm["Ordre"]->getData();
         }
-        $offre = $this->getDoctrine()
-        ->getRepository(Offre::class)
-        ->ResearchOffreByName($search, $order);
+        if(isset($search)){
+            $offre = $this->getDoctrine()
+            ->getRepository(Offre::class)
+            ->ResearchOffreByName($search, $order);
+        }
         return $this->render('castings/index.html.twig', [
            'controller_name' => 'CastingsController',
            'offres'=>$offre,

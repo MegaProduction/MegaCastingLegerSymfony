@@ -16,6 +16,7 @@ class ResearchOffreType extends AbstractType
         $builder
         ->add('intitule', TextType::class , [
             'label'=>'Offre',
+            'required'=>false,
         ])
         ->add('Ordre', ChoiceType::class, [
             'label'=>'Ordre',
