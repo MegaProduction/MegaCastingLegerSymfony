@@ -41,7 +41,7 @@ class OffreRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('o')
             ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
+            ->setParameter('val', $value.'%')
             ->getQuery()
             ->getOneOrNullResult()
         ;
@@ -49,23 +49,29 @@ class OffreRepository extends ServiceEntityRepository
     */
 
     /**
-     * Retourne les offres
+     * Retourne les 2 dernieres offres
      *  Offre[]
-     * @return void
      */
     public function LastInsert()
     {
-        $entityManager = $this->getEntityManager();
-
-        $query = $entityManager->createQueryBuilder()
-            ->select('o.identifiant, o.intitule, c.libelle, cl.libelle as client')
-            ->from('App\Entity\Offre', 'o')
-            ->innerJoin('App\Entity\Contrat', 'c', 'WITH', 'o.identifiantcontrat = c.identifiant')
-            ->innerJoin('App\Entity\Offreclient', 'oc', 'WITH', 'o.identifiant = oc.identifiantoffre')
-            ->innerJoin('App\Entity\Client', 'cl', 'WITH', 'oc.identifiantclient = cl.identifiant')
-            ->orderBy('o.identifiant', 'DESC')
-            ->setMaxResults(2)
-            ->getQuery();
-        return $query->getResult();
+        return $this->createQueryBuilder('o')
+                ->orderBy('o.identifiant', 'DESC')
+                ->setMaxResults(2)
+                ->getQuery()
+                ->getResult();
+    }
+    /**
+     * Retourne les offres ayant la valeur demande dans leur nom 
+     *  Offre[]
+     * 
+     */
+    public function ResearchOffreByName(string $value, string $order)
+    {
+        return $this->createQueryBuilder('o')
+                ->andWhere('o.intitule LIKE :val')
+                ->setParameter('val', '%'.$value.'%')
+                ->orderBy('o.intitule', $order)
+                ->getQuery()
+                ->getResult();
     }
 }

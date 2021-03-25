@@ -8,8 +8,8 @@
     <div class="carousel-item active">
      {% for key in offre|slice(0, 1) %}
         <div class="text-center">
-            <h5>{% trans %}Une nouvelle offre {% endtrans %}({{ key.intitule }}){% trans %} vient d'être ajoutée{% endtrans %}</h5>
-            <p>{{ key.libelle }} {% trans %} par {% endtrans %} {{ key.client}} </p>
+            <h5>{% trans %}Une nouvelle offre {% endtrans %}({{ key.getIntitule }}){% trans %} vient d'être ajoutée{% endtrans %}</h5>
+            <p>{{ key.getIdentifiantcontrat.getLibelle }}</p>
             <a class="btn btn-info" href="/casting/{{ key.identifiant }}">Voir les détails ...</a>
         </div>
      {% endfor %}
@@ -17,8 +17,8 @@
     <div class="carousel-item">
         {% for key in offre|slice(1, 1) %}
         <div class="text-center">
-            <h5>{% trans %}Une nouvelle offre {% endtrans %}({{ key.intitule }}){% trans %} vient d'être ajoutée{% endtrans %}</h5>
-            <p>{{ key.libelle }} {% trans %} par {% endtrans %} {{ key.client}} </p>
+            <h5>{% trans %}Une nouvelle offre {% endtrans %}({{ key.getIntitule }}){% trans %} vient d'être ajoutée{% endtrans %}</h5>
+            <p>{{ key.getIdentifiantcontrat.getLibelle }}</p>
             <a class="btn btn-info" href="/casting/{{ key.identifiant }}">Voir les détails ...</a>
         </div>
         {% endfor %}
@@ -45,17 +45,4 @@
     </div>
   </div>
 </div>
-{# <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <p class="text-primary">test 1</p>
-    </div>
-    <div class="carousel-item">
-      <p class="text-primary">test 2</p>
-    </div>
-    <div class="carousel-item">
-      <p class="text-primary">test 3</p>
-    </div>
-  </div>
-</div> #}
 {% endblock %}

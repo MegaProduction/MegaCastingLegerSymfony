@@ -18,6 +18,7 @@ class IndexController extends AbstractController
     {
         $offre = $this->getDoctrine()->getRepository(Offre::class)
         ->LastInsert();
+        // var_dump($offre);
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
             'offre'=> $offre

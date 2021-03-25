@@ -4,25 +4,33 @@
 
 {% block body %}
     <h2 class="titredescastings mt-5 mb-5">Castings</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        {% for offre in offres %}
-            {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") and offre.getEstvalide() == true %}
-                <div class="col">
-                    <div class="card">
-                        <img src="{{ asset('img/casting.png') }}" class="card-img-top" alt="logo casting">
-                        <div class="card-body">
-                            <h5 class="card-title"> 
-                                {{ offre.getIntitule() }}      
-                            </h5>
-                            <p class="card-text">{{ offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") }}</p>
-                            <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-success">Dernière modification {{offre.getDateajout()|date("d/m/Y")}}.</small>
+    <div class = "row g-2">
+        <div class="col-6">
+            {{ form_errors(offreResearchForm) }}
+            {{ form_start(offreResearchForm) }}
+            {{ form_end(offreResearchForm) }}
+            {# <div class="p-3 border bg-light">Custom column padding</div> #}
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for offre in offres %}
+                {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") and offre.getEstvalide() == true %}
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ asset('img/casting.png') }}" class="card-img-top" alt="logo casting">
+                            <div class="card-body">
+                                <h5 class="card-title"> 
+                                    {{ offre.getIntitule() }}      
+                                </h5>
+                                <p class="card-text">{{ offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") }}</p>
+                                <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-success">Dernière modification {{offre.getDateajout()|date("d/m/Y")}}.</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
