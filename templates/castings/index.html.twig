@@ -8,6 +8,17 @@
         <div class="col-2">
             {{ form_errors(offreResearchForm) }}
             {{ form_start(offreResearchForm) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(offreResearchForm.intitule) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.Ordre) }}
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn-primary btn">Envoyer</button>
+                </div>
+            </div>
             {{ form_end(offreResearchForm) }}
             {# <div class="p-3 border bg-light">Custom column padding</div> #}
         </div>

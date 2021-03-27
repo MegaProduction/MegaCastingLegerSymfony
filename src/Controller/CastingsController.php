@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Offre;
+use App\Entity\Offreresearch;
 use App\Repository\OffreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,26 +22,19 @@ class CastingsController extends AbstractController
         $offre = $this->getDoctrine()
                 ->getRepository(Offre::class)
                 ->findAll();
-        $offreResearch = new Offre();
-        $offreResearchForm = $this->createForm(ResearchOffreType::class);
+        $offreResearch = new Offreresearch();
+        $offreResearchForm = $this->createForm(ResearchOffreType::class, $offreResearch);
         $offreResearchForm->handleRequest($request);
         if ($offreResearchForm->isSubmitted() && $offreResearchForm->isValid()) {
-            $search = $offreResearchForm["intitule"]->getData();
-            $order = $offreResearchForm["Ordre"]->getData();
-            if(isset($search)){
+            if(isset($offreResearch)){
                 $offre = $this->getDoctrine()
                 ->getRepository(Offre::class)
-                ->ResearchOffreByName($search, $order);
+                ->ResearchOffreByName($offreResearch);
             }else{
                 $offre =$this->getDoctrine()
                 ->getRepository(Offre::class)
                 ->findAll();
             }
-            $data = $paginator->paginate(
-                $offre,//data
-                $request->query->getInt('page',1),//Numero de la page en cours 
-                6//Nombre d'element affiche
-            );
         }
         $data = $paginator->paginate(
             $offre,//data
