@@ -8,6 +8,17 @@
         <div class="col-2">
             {{ form_errors(offreResearchForm) }}
             {{ form_start(offreResearchForm) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(offreResearchForm.intitule) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.Ordre) }}
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn-primary btn">Envoyer</button>
+                </div>
+            </div>
             {{ form_end(offreResearchForm) }}
             {# <div class="p-3 border bg-light">Custom column padding</div> #}
         </div>
@@ -32,15 +43,9 @@
                 {% endif %}
             {% endfor %}
         </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
+    </div>
+    <div class="col-2 mt-5">
+        {{ knp_pagination_render(offres) }}
     </div>
     
 {% endblock %}

@@ -3,40 +3,47 @@
 namespace App\Controller;
 
 use App\Entity\Offre;
+use App\Entity\Offreresearch;
 use App\Repository\OffreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\ResearchOffreType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 class CastingsController extends AbstractController
 {
     /**
      * @Route("/castings", name="castings")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
     {
-        $offre =$this->getDoctrine()
+        $offre = $this->getDoctrine()
                 ->getRepository(Offre::class)
                 ->findAll();
-        $offreResearch = new Offre();
-        $search = "";
-        $order = "";
-        $offreResearchForm = $this->createForm(ResearchOffreType::class);
+        $offreResearch = new Offreresearch();
+        $offreResearchForm = $this->createForm(ResearchOffreType::class, $offreResearch);
         $offreResearchForm->handleRequest($request);
         if ($offreResearchForm->isSubmitted() && $offreResearchForm->isValid()) {
-            $search = $offreResearchForm["intitule"]->getData();
-            $order = $offreResearchForm["Ordre"]->getData();
+            if(isset($offreResearch)){
+                $offre = $this->getDoctrine()
+                ->getRepository(Offre::class)
+                ->ResearchOffreByName($offreResearch);
+            }else{
+                $offre =$this->getDoctrine()
+                ->getRepository(Offre::class)
+                ->findAll();
+            }
         }
-        if(isset($search)){
-            $offre = $this->getDoctrine()
-            ->getRepository(Offre::class)
-            ->ResearchOffreByName($search, $order);
-        }
+        $data = $paginator->paginate(
+            $offre,//data
+            $request->query->getInt('page',1),//Numero de la page en cours 
+            6//Nombre d'element affiche
+        );
         return $this->render('castings/index.html.twig', [
            'controller_name' => 'CastingsController',
-           'offres'=>$offre,
+           'offres'=>$data,
            'offreResearchForm'=>$offreResearchForm->createView()
 
         ]);

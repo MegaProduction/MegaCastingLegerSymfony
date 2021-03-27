@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Offre;
+use App\Entity\Offreresearch;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -65,13 +66,15 @@ class OffreRepository extends ServiceEntityRepository
      *  Offre[]
      * 
      */
-    public function ResearchOffreByName(string $value, string $order)
+    public function ResearchOffreByName(Offreresearch $search)
     {
-        return $this->createQueryBuilder('o')
-                ->andWhere('o.intitule LIKE :val')
-                ->setParameter('val', '%'.$value.'%')
-                ->orderBy('o.intitule', $order)
-                ->getQuery()
+        $query = $this->createQueryBuilder('o')
+        ->orderBy('o.intitule', $search->getOrdre());
+        if ($search->getintitule()) {
+            $query = $query->andWhere('o.intitule LIKE :val')
+                            ->setParameter('val', '%'.$search->getintitule().'%');
+        }
+        return $query->getQuery()
                 ->getResult();
     }
 }
