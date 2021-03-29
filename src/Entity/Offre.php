@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Offre
  *
  * @ORM\Table(name="Offre", indexes={@ORM\Index(name="IDX_6E47A96BEF0582D8", columns={"IdentifiantContrat"}), @ORM\Index(name="IDX_6E47A96B525B950", columns={"IdentifiantMetier"}), @ORM\Index(name="IDX_6E47A96BA7E21577", columns={"Localisation"})})
- * @ORM\Entity(repositoryClass="App\Repository\OffreRepository")
+ * @ORM\Entity
  */
 class Offre
 {
@@ -75,7 +75,7 @@ class Offre
      *
      * @ORM\Column(name="CoordonnÃ©es", type="string", length=50, nullable=false)
      */
-    private $coordonnï¿½es;
+    private $coordonnã©es;
 
     /**
      * @var bool
@@ -210,14 +210,14 @@ class Offre
         return $this;
     }
 
-    public function getCoordonnï¿½es(): ?string
+    public function getCoordonnã©es(): ?string
     {
-        return $this->coordonnï¿½es;
+        return $this->coordonnã©es;
     }
 
-    public function setCoordonnï¿½es(string $coordonnï¿½es): self
+    public function setCoordonnã©es(string $coordonnã©es): self
     {
-        $this->coordonnï¿½es = $coordonnï¿½es;
+        $this->coordonnã©es = $coordonnã©es;
 
         return $this;
     }

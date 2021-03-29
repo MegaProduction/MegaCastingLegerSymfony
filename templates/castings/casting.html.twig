@@ -3,7 +3,7 @@
 {% block title %}MegaCasting | {{ offre.intitule }}{% endblock %}
 
 {% block body %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-5">
         <div class="col-6 col-sm-3">
             <article class="casting text-center"> 
                 <h2 class="titredescastings mt-5 mb-5">Casting</h2>
@@ -14,6 +14,74 @@
             </article>
         </div>
     </div>
-    
-        
+    <div class="row">
+        <div class="col-md-1-12">
+            {% if(app.user) %}
+            {{ form_errors(form) }}
+            {{ form_start(form) }}
+            {% if postuleExisting  is not null %}
+                <button type="submit" class="btn btn-primary">Postuler</button>
+                {% if demande %}
+                    <div class="alert alert-success" role="alert">
+                        Votre demande a été enregistrée
+                    </div>
+                {% endif %}
+            {% else %}
+                <button type="submit" class="btn btn-primary">Postuler</button>
+            {% endif %}
+            {{ form_end(form) }}
+            {% else %}
+                <div class="alert alert-danger" role="alert"> 
+                    <strong>Pour postuler merci de vous connecter </strong><a href="{{ path('app_login') }}" class="alert-link">ici</a>
+                </div>               
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-1-12">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalContact">
+                {% trans %}Plus d'information contacter directement ici {% endtrans %}
+            </button>
+            <div class="modal fade" id="modalContact" tabindex="-1" aria-labelledby="modalContactLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalContactlLabel">{% trans %}Contacte {% endtrans %} </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    {{ form_errors(formContact) }}
+                    {{ form_start(formContact) }}
+                    {{ form_widget(formContact.title) }}
+                    {{ form_row(formContact.email) }}
+                    {{ form_row(formContact.message) }}
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans %}Fermer{% endtrans %}</button>
+                        <button type="submit" class="btn btn-primary">{% trans %}Envoyer le message{% endtrans %}</button>
+                    </div>
+                    {{ form_end(formContact) }}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+            integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+            integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous">
+        </script>
+        <script src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"></script>
+         <script src={{ asset('script/index.js') }}></script>
+        <script src={{ asset('script/carousel.js') }}></script>
+        <script>
+            window.onload = function() {
+                document.querySelector("#casting_annonce_title").value = "{{ offre.intitule|raw }}";
+            }
+        </script>
 {% endblock %}
