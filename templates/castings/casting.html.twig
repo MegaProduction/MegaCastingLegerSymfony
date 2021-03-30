@@ -20,7 +20,7 @@
             {{ form_errors(form) }}
             {{ form_start(form) }}
             {% if postuleExisting  is not null %}
-                <button type="submit" class="btn btn-primary">Postuler</button>
+                <button type="submit" class="btn btn-primary" disabled>Postuler</button>
                 {% if demande %}
                     <div class="alert alert-success" role="alert">
                         Votre demande a été enregistrée
@@ -28,6 +28,11 @@
                 {% endif %}
             {% else %}
                 <button type="submit" class="btn btn-primary">Postuler</button>
+                {% for message in app.flashes('message') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+                {% endfor %}
             {% endif %}
             {{ form_end(form) }}
             {% else %}

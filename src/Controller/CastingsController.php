@@ -107,6 +107,7 @@ class CastingsController extends AbstractController
                 ]);
                 //Envoie mail
                 $mailer->send($email);
+                var_dump($mailer);
                 //Confirmation
                 $this->addFlash('message', 'Votre e-mail a bien été envoyé');
              return $this->redirectToRoute('casting', ['id'=> $id]);
