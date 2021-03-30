@@ -18,7 +18,8 @@
         <div class="col-md-1-12">
             {% if(app.user) %}
             {{ form_errors(form) }}
-            {{ form_start(form) }}
+            {{ form_start(form,{'enctype':'multipart/form-data'}) }}
+            {{ form_row(form.CV) }}
             {% if postuleExisting  is not null %}
                 <button type="submit" class="btn btn-primary" disabled>Postuler</button>
                 {% if demande %}

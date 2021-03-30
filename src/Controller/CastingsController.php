@@ -6,6 +6,7 @@ use App\Entity\Offre;
 use App\Entity\Postule;
 use App\Entity\Candidat;
 use App\Entity\Offreclient;
+use App\Entity\PostuleFile;
 use App\Entity\Offreresearch;
 use App\Form\PostuleFormType;
 use App\Form\ResearchOffreType;
@@ -17,7 +18,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 class CastingsController extends AbstractController
 {
@@ -65,10 +69,11 @@ class CastingsController extends AbstractController
     /**
      * @Route("/casting/{id}", name="casting")
      */
-    public function show(int  $id, Request $request, MailerInterface $mailer): Response
+    public function show(int  $id, Request $request, MailerInterface $mailer, SluggerInterface $slugger): Response
     {
         $candidat = $this->get('security.token_storage')->getToken()->getUser();       
         $demande = false;
+        $postuleFile = new PostuleFile();
         $postule = new Postule();
         $offre = $this->getDoctrine()
                     ->getRepository(Offre::class)
@@ -79,7 +84,7 @@ class CastingsController extends AbstractController
                                 array('identifiantoffre'=>  $id)
                                );
 
-        $postuleform = $this->createForm(PostuleFormType::class, $postule);
+        $postuleform = $this->createForm(PostuleFormType::class, $postuleFile);
         $postuleform->handleRequest($request);
         
         if ($postuleform->isSubmitted() && $postuleform->isValid()) {
@@ -89,6 +94,31 @@ class CastingsController extends AbstractController
             $entityManager->persist($postule);
             $entityManager->flush();
             $demande=true;
+            var_dump($postuleFile);
+            $cv = $postuleFile->getCV()->getData();
+            $originalFilename = pathinfo($cv->getClientOriginalName(), PATHINFO_FILENAME);
+            // this is needed to safely include the file name as part of the URL
+            $safeFilename = $slugger->slug($originalFilename);
+            $newFilename = $safeFilename.'-'.uniqid().'.'.$cv->guessExtension();
+            $cv->move(
+                $this->getParameter('brochures_directory'),
+                $newFilename);
+            //Creation du mail
+            $email = (new TemplatedEmail())
+            ->from($candidat->getLogin())
+            ->to($offreClient["0"]->getIdentifiantclient()->getLogin())
+            ->subject($candidat->getLastname().$candidat->getFirstname().' a postule pour '.$offre->getIntitule(). 'voici ces informations')
+            ->htmlTemplate('emails/postule.html.twig')
+            ->context([
+                'offre'=> $offre,
+                'candidat'=> $candidat,
+                'cv'=> $cv,
+            ]);
+            //Envoie mail
+            $mailer->send($email);
+            //Confirmation
+            $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+            return $this->redirectToRoute('casting', ['id'=> $id]);
         }
         $contactOffre = $this->createForm(CastingAnnonceType::class);
         $contact = $contactOffre->handleRequest($request);
