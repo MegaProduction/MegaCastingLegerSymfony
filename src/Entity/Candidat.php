@@ -66,6 +66,11 @@ class Candidat implements UserInterface
      */
     private $roles = ['candidat'];
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isVerified = false;
+
     public function setIdentifiant(int $identifiant): self
     {
         $this->identifiant = $identifiant;
@@ -157,5 +162,17 @@ class Candidat implements UserInterface
     public function getUsername()
     {
         return $this->login;
+    }
+
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
     }
 }
