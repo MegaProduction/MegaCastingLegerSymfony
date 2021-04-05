@@ -10,8 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Offreresearch extends Offre
 {
-    
+    private $datefin;
     private $ordre;
+    private $identifiantdomaine;
     /**
      * Set the value of ordre
      *
@@ -30,5 +31,44 @@ class Offreresearch extends Offre
     public function getOrdre()
     {
         return $this->ordre;
+    }
+    
+
+    /**
+     * Get the value of datefin
+     */ 
+    public function getDatefin()
+    {
+        return $this->datefin;
+    }
+
+    /**
+     * Set the value of datefin
+     *
+     * @return  self
+     */ 
+    public function setDatefin($datefin)
+    {
+        return $this->datefin = $datefin;
+    }
+
+    /**
+     * Get the value of identifiantdomaine
+     */ 
+    public function getIdentifiantdomaine()
+    {
+        return $this->identifiantdomaine;
+    }
+
+    /**
+     * Set the value of identifiantdomaine
+     *
+     * @return  self
+     */ 
+    public function setIdentifiantdomaine($identifiantdomaine)
+    {
+        $this->identifiantdomaine = $identifiantdomaine;
+
+        return $this;
     }
 }

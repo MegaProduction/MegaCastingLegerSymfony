@@ -4,6 +4,11 @@
 
 {% block body %}
     <h2 class="titredescastings mt-5 mb-5">Castings</h2>
+            {% for message in app.flashes('OfferMessage') %}
+                <div class="alert alert-info" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
     <div class="row g-2 flex-row">
         <div class="col-2">
             {{ form_errors(offreResearchForm) }}
@@ -13,18 +18,30 @@
                     {{ form_row(offreResearchForm.intitule) }}
                 </div>
                 <div class="col">
+                    {{ form_row(offreResearchForm.datedebut) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.datefin) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.identifiantmetier) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.identifiantdomaine) }}
+                </div>
+                <div class="col">
                     {{ form_row(offreResearchForm.Ordre) }}
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn-primary btn">Envoyer</button>
+                    <button type="submit" class="btn-primary btn">Rechercher</button>
                 </div>
             </div>
             {{ form_end(offreResearchForm) }}
-            {# <div class="p-3 border bg-light">Custom column padding</div> #}
+            <a href="{{ path('castings') }}" class="btn-primary btn mt-2">Annuler tous les filtres</a>
         </div>
         <div class="col row row-cols-1 row-cols-md-3 g-4">
             {% for offre in offres %}
-                {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") and offre.getEstvalide() == true %}
+                {# {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") and offre.getEstvalide() == true %} #}
                     <div class="col">
                         <div class="card">
                             <img src="{{ asset('img/casting.png') }}" class="card-img-top" alt="logo casting">
@@ -40,8 +57,8 @@
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
+                {# {% endif %} #}
+            {% endfor %}            
         </div>
     </div>
     <div class="col-2 mt-5">

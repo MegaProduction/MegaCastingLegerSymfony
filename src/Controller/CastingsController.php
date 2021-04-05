@@ -9,6 +9,7 @@ use App\Entity\Offreclient;
 use App\Entity\PostuleFile;
 use App\Entity\Offreresearch;
 use App\Form\PostuleFormType;
+use App\Service\FileUploader;
 use App\Form\ResearchOffreType;
 use App\Form\CastingAnnonceType;
 use App\Repository\OffreRepository;
@@ -18,9 +19,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\String\Slugger\SluggerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class CastingsController extends AbstractController
@@ -44,6 +45,15 @@ class CastingsController extends AbstractController
                 $offre = $this->getDoctrine()
                 ->getRepository(Offre::class)
                 ->ResearchOffreByName($offreResearch);
+                if (empty ($offre)) {
+                    $this->addFlash(
+                        'OfferMessage',
+                        'Pas d\'offre suite à votre demande'
+                    );
+                }
+                else {
+                    echo 'else';
+                }
             }else{
                 $offre =$this->getDoctrine()
                 ->getRepository(Offre::class)
@@ -69,7 +79,7 @@ class CastingsController extends AbstractController
     /**
      * @Route("/casting/{id}", name="casting")
      */
-    public function show(int  $id, Request $request, MailerInterface $mailer, SluggerInterface $slugger): Response
+    public function show(int  $id, Request $request, MailerInterface $mailer, FileUploader $fileUploader): Response
     {
         $candidat = $this->get('security.token_storage')->getToken()->getUser();       
         $demande = false;
@@ -93,16 +103,11 @@ class CastingsController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($postule);
             $entityManager->flush();
-            $demande=true;
-            var_dump($postuleFile);
-            $cv = $postuleFile->getCV()->getData();
-            $originalFilename = pathinfo($cv->getClientOriginalName(), PATHINFO_FILENAME);
-            // this is needed to safely include the file name as part of the URL
-            $safeFilename = $slugger->slug($originalFilename);
-            $newFilename = $safeFilename.'-'.uniqid().'.'.$cv->guessExtension();
-            $cv->move(
-                $this->getParameter('brochures_directory'),
-                $newFilename);
+            var_dump($postuleform->getData());
+            $cvFile = $postuleform->get('CV')->getData();
+            if ($cvFile) {
+                $cv = $fileUploader->upload($cvFile);
+            }
             //Creation du mail
             $email = (new TemplatedEmail())
             ->from($candidat->getLogin())

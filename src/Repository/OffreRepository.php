@@ -4,8 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Offre;
 use App\Entity\Offreresearch;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Offre|null find($id, $lockMode = null, $lockVersion = null)
@@ -72,7 +73,28 @@ class OffreRepository extends ServiceEntityRepository
         ->orderBy('o.intitule', $search->getOrdre());
         if ($search->getintitule()) {
             $query = $query->andWhere('o.intitule LIKE :val')
-                            ->setParameter('val', '%'.$search->getintitule().'%');
+            ->setParameter('val', '%'.$search->getintitule().'%');
+        }
+        if ($search->getDatedebut()) {
+            $query = $query->andWhere('o.datedebut >= :date')
+            ->setParameter('date', $search->getDatedebut());
+        }
+        if ($search->getDatefin()) {
+            $diff = $search->getDatedebut()->diff($search->getDatefin());
+            $more_days = $diff->d;
+            $query = $query->andWhere('o.dureediffusion <= :dure')
+            ->setParameter('dure', $more_days);
+        }
+        if ($search->getIdentifiantmetier()) {
+            $query = $query->andWhere('o.identifiantmetier = :metier')
+                            ->setParameter('metier', $search->getIdentifiantmetier()->getIdentifiant());
+        }
+        if ($search->getIdentifiantmetier()->getIdentifiantdomaine()->getIdentifiant()) {
+            $query = $query->innerJoin('App\Entity\Metier','metier',Join::WITH, 'metier.identifiant=o.identifiantmetier')
+                            ->innerJoin('App\Entity\Domaine','domaine',Join::WITH, 'domaine.identifiant=metier.identifiantdomaine')
+                            ->andWhere('domaine.identifiant = :domaine')
+                            ->setParameter('domaine', $search->getIdentifiantmetier()->getIdentifiantdomaine()->getIdentifiant())
+                            ->select('o');
         }
         return $query->getQuery()
                 ->getResult();

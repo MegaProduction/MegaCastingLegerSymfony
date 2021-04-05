@@ -79,11 +79,8 @@ class CandidatAuthentificatorAuthenticator extends AbstractFormLoginAuthenticato
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        // Check the user's password or other credentials and return true or false
-        // If there are no credentials to check, you can just return true
-        // var_dump($credentials);
+
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
-        // throw new \Exception('TODO: check the credentials inside '.__FILE__);
     }
 
     /**
