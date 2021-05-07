@@ -1,6 +1,10 @@
-var myCarousel = document.querySelector('#carouselOffer');
-var carousel = new bootstrap.Carousel(myCarousel, {
-  interval: 2000,
-  wrap: false
+
+function Carousel() {
+  var myCarousel = document.querySelector('#Carousel');
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 3000,
+    wrap: false
 });
-console.log(carousel);
+console.log(carousel)
+}
+window.onload = Carousel;

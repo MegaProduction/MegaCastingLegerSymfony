@@ -36,11 +36,11 @@ class ContactFormType extends AbstractType
                 ])
             ->add('objet', ChoiceType::class, [
                     'label'=>'Objet',
-                    'choices'=>['Casting "Art"' => true,
-                        'Casting "Production"' => true,
-                        'Casting "Spectacle"' => true,
-                        'Casting "Théâtre"' => true,
-                        'Casting "Cinéma"' => true,
+                    'choices'=>['Casting Art' => true,
+                        'Casting Production' => true,
+                        'Casting Spectacle' => true,
+                        'Casting Théâtre' => true,
+                        'Casting Cinéma' => true,
                         'Autres' => true],
                 'attr' => ['class' => 'mb-4'],
                 ])

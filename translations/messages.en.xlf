@@ -57,9 +57,9 @@
         <source>Inscrivez-vous ou connectez-vous pour pouvoir postuler.</source>
         <target>Subscribe or login to apply.</target>
       </trans-unit>
-      <trans-unit id="N9v2JYp" resname="Postuler avec les coodornnées données sur le casting.">
-        <source>Postuler avec les coodornnées données sur le casting.</source>
-        <target>Apply with contact information on the casting.</target>
+      <trans-unit id="N9v2JYp" resname="Postuler sur le site pour n'importe quelle casting.">
+        <source>Postuler sur le site pour n'importe quelle casting.</source>
+        <target>Apply to the site for any casting call.</target>
       </trans-unit>
       <trans-unit id="UzFhc1Y" resname="Accueil">
         <source>Accueil</source>
@@ -153,6 +153,75 @@
         <source>Envoyer</source>
         <target>Send</target>
       </trans-unit>
+      <trans-unit id="157854d" resname="Postuler">
+          <source>Postuler</source>
+          <target>Apply</target>
+      </trans-unit>
+         <trans-unit id="6544fd" resname="Offre">
+          <source>Offre</source>
+          <target>Offer</target>
+      </trans-unit>
+      <trans-unit id="sdsdsds7" resname="Nom de l'offre">
+          <source>Nom de l'offre</source>
+          <target>Name offer</target>
+      </trans-unit>
+      <trans-unit id="fbdjkfhjkd" resname="Date de début">  
+        <source>Date de début</source>
+        <target>Start date</target>
+      </trans-unit>
+      <trans-unit id="sdsds" resname="Date de fin">
+        <source>Date de fin</source>
+        <target>End date</target>
+      </trans-unit>
+      <trans-unit id="sdsdsqfdgf" resname="Métier">
+        <source>Métier</source>
+        <target>Job</target>
+      </trans-unit>
+      <trans-unit id="dgjjg" resname="Domaine">
+        <source>Domaine</source>
+        <target>Field</target>
+      </trans-unit>
+      <trans-unit id="sdsd" resname="Ordre">
+        <source>Ordre</source>
+        <target>Order</target>
+      </trans-unit>
+      <trans-unit id="sdsdsr" resname="Ordre aphabétique (A->Z)">
+        <source>Ordre aphabétique (A->Z)</source>
+        <target>Alphabetical order (A->Z)</target>
+      </trans-unit>
+      <trans-unit id="zetrzetze" resname="Ordre aphabétique (Z->A)">
+        <source>Ordre aphabétique (Z->A)</source>
+        <target>Alphabetical order (Z->A)</target>
+      </trans-unit>
+          <trans-unit id="kjof" resname="Casting Art">
+          <source>Casting "Art"</source>
+          <target>Casting "Art"</target>
+        </trans-unit>
+       <trans-unit id="ipopko" resname="Casting Production">
+          <source>Casting "Production"</source>
+          <target>Casting "Production"</target>
+        </trans-unit>
+       <trans-unit id="oloki" resname="Casting Spectacle">
+          <source>Casting "Spectacle"</source>
+          <target>Casting "Show"</target>
+        </trans-unit>
+       <trans-unit id="opod" resname="Casting Théâtre">
+          <source>Casting "Théâtre"</source>
+          <target>Casting "Theater"</target>
+        </trans-unit>
+
+        <trans-unit id="rhrhutrj" resname="Casting Cinéma">
+          <source>Casting "Cinéma"</source>
+          <target>Casting "Cinema"</target>
+        </trans-unit>
+        <trans-unit id="yuu" resname="Autres">
+          <source>Autres</source>
+          <target>Others</target>
+        </trans-unit>
+        <trans-unit id="4654" resname="Message">
+          <source>Message</source>
+          <target>Message</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

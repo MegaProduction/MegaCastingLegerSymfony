@@ -27,17 +27,11 @@ class ResearchOffreType extends AbstractType
             ]
         ])
         ->add('datedebut', DateType::class, [
-            'label'=>'date de debut',
+            'label'=>'Date de début',
             'required'=>false,
             'widget' => 'single_text',
             'format' => 'yyyy-MM-dd',
             'empty_data' => 'Default value',
-        ])
-        ->add('datefin', DateType::class, [
-            'label'=>'Date de fin',
-            'required'=>false,
-            'widget' => 'single_text',
-            'format' => 'yyyy-MM-dd',
         ])
         ->add('datefin', DateType::class, [
             'label'=>'Date de fin',
