@@ -149,6 +149,10 @@ class Candidat implements UserInterface
         // You *may* need a real salt if you choose a different encoder.
         return null;
     }
+    public function __toString(){
+        // Or change the property that you want to show in the select.
+        return $this->login;
+    }
 
     public function getRoles()
     {

@@ -1,14 +1,18 @@
-<?php
+<?php // api/src/Entity/Review.php
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Offre
  *
  * @ORM\Table(name="Offre", indexes={@ORM\Index(name="IDX_6E47A96BEF0582D8", columns={"IdentifiantContrat"}), @ORM\Index(name="IDX_6E47A96B525B950", columns={"IdentifiantMetier"}), @ORM\Index(name="IDX_6E47A96BA7E21577", columns={"Localisation"})})
  * @ORM\Entity(repositoryClass="App\Repository\OffreRepository")
+ * @ApiResource()
+
  */
 class Offre
 {
@@ -281,6 +285,4 @@ class Offre
 
         return $this;
     }
-
-
 }
