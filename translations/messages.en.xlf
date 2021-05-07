@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="sB0RYun" resname="Adresse mail">
+        <source>Adresse mail</source>
+        <target>Mail address</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>Connection</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Password</target>
+      </trans-unit>
+      <trans-unit id="jnn6bhX" resname="Accepter les termes">
+        <source>Accepter les termes</source>
+        <target>Agree terms</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="aWjWsyi" resname="text.message">
+        <source>text.message</source>
+        <target>__text.message</target>
+      </trans-unit>
+      <trans-unit id="hLfnUmV" resname="%message%">
+        <source>%message%</source>
+        <target>__%message%</target>
+      </trans-unit>
+      <trans-unit id="4o_NEWp" resname="Megacasting : comment ça marche ?">
+        <source>Megacasting : comment ça marche ?</source>
+        <target>MegaCasting : how it works ?</target>
+      </trans-unit>
+      <trans-unit id="PEiqK99" resname="Début">
+        <source>Début</source>
+        <target>Begin</target>
+      </trans-unit>
+      <trans-unit id="4mfTQ4I" resname="Profil">
+        <source>Profil</source>
+        <target>Profile</target>
+      </trans-unit>
+      <trans-unit id="K1w9JnI" resname="Contact">
+        <source>Contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="XvJtUH8" resname="Consulter les offres qui vous intéressent.">
+        <source>Consulter les offres qui vous intéressent.</source>
+        <target>See offers that interest you.</target>
+      </trans-unit>
+      <trans-unit id="Dzl5R87" resname="Inscrivez-vous ou connectez-vous pour pouvoir postuler.">
+        <source>Inscrivez-vous ou connectez-vous pour pouvoir postuler.</source>
+        <target>Subscribe or login to apply.</target>
+      </trans-unit>
+      <trans-unit id="N9v2JYp" resname="Postuler sur le site pour n'importe quelle casting.">
+        <source>Postuler sur le site pour n'importe quelle casting.</source>
+        <target>Apply to the site for any casting call.</target>
+      </trans-unit>
+      <trans-unit id="UzFhc1Y" resname="Accueil">
+        <source>Accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="gvORkeR" resname="Castings">
+        <source>Castings</source>
+        <target>Castings</target>
+      </trans-unit>
+      <trans-unit id="QSvguc1" resname="Informations">
+        <source>Informations</source>
+        <target>Information</target>
+      </trans-unit>
+      <trans-unit id="qkM1cgL" resname="Connexion / Inscription">
+        <source>Connexion / Inscription</source>
+        <target>Log in / Sign in</target>
+      </trans-unit>
+      <trans-unit id="wJgg0Ru" resname="Recherchez...">
+        <source>Recherchez...</source>
+        <target>Search...</target>
+      </trans-unit>
+      <trans-unit id="HuZ75em" resname="La meilleure agence de production !">
+        <source>La meilleure agence de production !</source>
+        <target>The best production agency !</target>
+      </trans-unit>
+      <trans-unit id="jStbl5L" resname="Venez participer :">
+        <source>Venez participer :</source>
+        <target>Come join us :</target>
+      </trans-unit>
+      <trans-unit id="X7S8.WV" resname="Une nouvelle offre">
+        <source>Une nouvelle offre</source>
+        <target>A new offer</target>
+      </trans-unit>
+      <trans-unit id="KcautZd" resname="vient d'être ajoutée">
+        <source>vient d'être ajoutée</source>
+        <target>had just been added</target>
+      </trans-unit>
+      <trans-unit id="ydnSxL6" resname="par">
+        <source>par</source>
+        <target>by</target>
+      </trans-unit>
+      <trans-unit id="1" resname="Vous êtes connecté en tant que">
+        <source>Vous êtes connecté en tant que </source>
+        <target>You are logged in as</target>
+      </trans-unit>
+      <trans-unit id="2" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>Log out</target>
+      </trans-unit>
+      <trans-unit id="3" resname="S'identifier">
+        <source>S'identifier</source>
+        <target>Log in</target>
+      </trans-unit>
+      <trans-unit id="4" resname="Veuillez vous connecter">
+        <source>Veuillez vous connecter</source>
+        <target>Please sign in</target>
+      </trans-unit>
+      <trans-unit id="5" resname="Se connecter">
+        <source>Se connecter</source>
+        <target>Sign in</target>
+      </trans-unit>
+      <trans-unit id="D9o1job" resname="MegaCasting est une agence de production spécialisée dans les représentations artistiques.">
+        <source>MegaCasting est une agence de production spécialisée dans les représentations artistiques.</source>
+        <target>MegaCasting is a production agency, specialized in artistic shows.</target>
+      </trans-unit>
+      <trans-unit id="IaAyjrK" resname="Notre champ d'actions couvre une grande partie des capacités artistiques que peuvent produire un humain.">
+        <source>Notre champ d'actions couvre une grande partie des capacités artistiques que peuvent produire un humain.</source>
+        <target>Our scope cover a large part of all artistic capacities that can produce a human.</target>
+      </trans-unit>
+      <trans-unit id="yfo_itgupr" resname="Nom d'utilisateur">
+        <source>Nom d'utilisateur</source>
+        <target>Login</target>
+      </trans-unit>
+      <trans-unit id="sfdgfhetyr" resname="Nom">
+        <source>Nom</source>
+        <target>Last Name</target>
+      </trans-unit>
+      <trans-unit id="esrgrhtytjyuiu" resname="Prénom">
+        <source>Prénom</source>
+        <target>First Name</target>
+      </trans-unit>
+      <trans-unit id="ekdrjgbgnzorelh" resname="Adresse">
+        <source>Adresse</source>
+        <target>Address</target>
+      </trans-unit>
+      <trans-unit id="sqefgdfhjh" resname="Objet">
+        <source>Objet</source>
+        <target>Object</target>
+      </trans-unit>
+      <trans-unit id="fertyhftghytj" resname="Envoyer">
+        <source>Envoyer</source>
+        <target>Send</target>
+      </trans-unit>
+      <trans-unit id="157854d" resname="Postuler">
+          <source>Postuler</source>
+          <target>Apply</target>
+      </trans-unit>
+         <trans-unit id="6544fd" resname="Offre">
+          <source>Offre</source>
+          <target>Offer</target>
+      </trans-unit>
+      <trans-unit id="sdsdsds7" resname="Nom de l'offre">
+          <source>Nom de l'offre</source>
+          <target>Name offer</target>
+      </trans-unit>
+      <trans-unit id="fbdjkfhjkd" resname="Date de début">  
+        <source>Date de début</source>
+        <target>Start date</target>
+      </trans-unit>
+      <trans-unit id="sdsds" resname="Date de fin">
+        <source>Date de fin</source>
+        <target>End date</target>
+      </trans-unit>
+      <trans-unit id="sdsdsqfdgf" resname="Métier">
+        <source>Métier</source>
+        <target>Job</target>
+      </trans-unit>
+      <trans-unit id="dgjjg" resname="Domaine">
+        <source>Domaine</source>
+        <target>Field</target>
+      </trans-unit>
+      <trans-unit id="sdsd" resname="Ordre">
+        <source>Ordre</source>
+        <target>Order</target>
+      </trans-unit>
+      <trans-unit id="sdsdsr" resname="Ordre aphabétique (A->Z)">
+        <source>Ordre aphabétique (A->Z)</source>
+        <target>Alphabetical order (A->Z)</target>
+      </trans-unit>
+      <trans-unit id="zetrzetze" resname="Ordre aphabétique (Z->A)">
+        <source>Ordre aphabétique (Z->A)</source>
+        <target>Alphabetical order (Z->A)</target>
+      </trans-unit>
+          <trans-unit id="kjof" resname="Casting Art">
+          <source>Casting "Art"</source>
+          <target>Casting "Art"</target>
+        </trans-unit>
+       <trans-unit id="ipopko" resname="Casting Production">
+          <source>Casting "Production"</source>
+          <target>Casting "Production"</target>
+        </trans-unit>
+       <trans-unit id="oloki" resname="Casting Spectacle">
+          <source>Casting "Spectacle"</source>
+          <target>Casting "Show"</target>
+        </trans-unit>
+       <trans-unit id="opod" resname="Casting Théâtre">
+          <source>Casting "Théâtre"</source>
+          <target>Casting "Theater"</target>
+        </trans-unit>
+
+        <trans-unit id="rhrhutrj" resname="Casting Cinéma">
+          <source>Casting "Cinéma"</source>
+          <target>Casting "Cinema"</target>
+        </trans-unit>
+        <trans-unit id="yuu" resname="Autres">
+          <source>Autres</source>
+          <target>Others</target>
+        </trans-unit>
+        <trans-unit id="4654" resname="Message">
+          <source>Message</source>
+          <target>Message</target>
+        </trans-unit>
+    </body>
+  </file>
+</xliff>

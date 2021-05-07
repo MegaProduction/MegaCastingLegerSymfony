@@ -1,20 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CastingsController!{% endblock %}
+{% block title %}MegaCasting | Castings{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/js/symp/megacasting/src/Controller/CastingsController.php'|file_link(0) }}">src/Controller/CastingsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/js/symp/megacasting/templates/castings/index.html.twig'|file_link(0) }}">templates/castings/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <h2 class="titredescastings mt-5 mb-5">Castings</h2>
+            {% for message in app.flashes('OfferMessage') %}
+                <div class="alert alert-info" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+    <div class="row g-2 flex-row">
+        <div class="col-2">
+            {{ form_errors(offreResearchForm) }}
+            {{ form_start(offreResearchForm) }}
+            <div class="form-row">
+                <div class="col">
+                    {{ form_row(offreResearchForm.intitule) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.datedebut) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.datefin) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.identifiantmetier) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.identifiantdomaine) }}
+                </div>
+                <div class="col">
+                    {{ form_row(offreResearchForm.Ordre) }}
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn-primary btn">Rechercher</button>
+                </div>
+            </div>
+            {{ form_end(offreResearchForm) }}
+            <a href="{{ path('castings') }}" class="btn-primary btn mt-2">Annuler tous les filtres</a>
+        </div>
+        <div class="col row row-cols-1 row-cols-md-3 g-4">
+            {% for offre in offres %}
+                {# {% if offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") and offre.getEstvalide() == true %} #}
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ asset('img/casting.png') }}" class="card-img-top" alt="logo casting">
+                            <div class="card-body">
+                                <h5 class="card-title"> 
+                                    {{ offre.getIntitule() }}      
+                                </h5>
+                                <p class="card-text">{{ offre.getDatedebut()|date("d/m/Y") <= "now"|date("d/m/Y") }}</p>
+                                <a href="/casting/{{ offre.getIdentifiant() }}" class="btn btn-info">Postuler</a>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-success">Dernière modification {{offre.getDateajout()|date("d/m/Y")}}.</small>
+                            </div>
+                        </div>
+                    </div>
+                {# {% endif %} #}
+            {% endfor %}            
+        </div>
+    </div>
+    <div class="col-2 mt-5">
+        {{ knp_pagination_render(offres) }}
+    </div>
+    
 {% endblock %}

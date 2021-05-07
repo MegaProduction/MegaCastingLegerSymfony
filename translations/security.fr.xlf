@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="baI_ZxO" resname="Une exception d'authentification s'est produite.">
+        <source>Une exception d'authentification s'est produite.</source>
+        <target>Une exception d'authentification s'est produite.</target>
+      </trans-unit>
+      <trans-unit id="OETylMq" resname="Les identifiants d'authentification n'ont pas pu être trouvés.">
+        <source>Les identifiants d'authentification n'ont pas pu être trouvés.</source>
+        <target>Les identifiants d'authentification n'ont pas pu être trouvés.</target>
+      </trans-unit>
+      <trans-unit id="3RJINQ0" resname="La requête d'authentification n'a pas pu être executée à cause d'un problème système.">
+        <source>La requête d'authentification n'a pas pu être executée à cause d'un problème système.</source>
+        <target>La requête d'authentification n'a pas pu être executée à cause d'un problème système.</target>
+      </trans-unit>
+      <trans-unit id="qr0aiUo" resname="Identifiants invalides">
+        <source>Identifiants invalides</source>
+        <target>Identifiants invalides.</target>
+      </trans-unit>
+      <trans-unit id="zrJWK0F" resname="Le cookie a déjà été utilisé par quelqu'un d'autre.">
+        <source>Le cookie a déjà été utilisé par quelqu'un d'autre.</source>
+        <target>Le cookie a déjà été utilisé par quelqu'un d'autre.</target>
+      </trans-unit>
+      <trans-unit id="blC0fXX" resname="Privilèges insuffisants pour accéder à la ressource.">
+        <source>Privilèges insuffisants pour accéder à la ressource.</source>
+        <target>Privilèges insuffisants pour accéder à la ressource.</target>
+      </trans-unit>
+      <trans-unit id="dLzMRPR" resname="Jeton CSRF invalide.">
+        <source>Jeton CSRF invalide.</source>
+        <target>Jeton CSRF invalide.</target>
+      </trans-unit>
+      <trans-unit id="PhhlLem" resname="Aucun fournisseur d'authentification n'a été trouvé pour supporter le jeton d'authentification.">
+        <source>Aucun fournisseur d'authentification n'a été trouvé pour supporter le jeton d'authentification.</source>
+        <target>Aucun fournisseur d'authentification n'a été trouvé pour supporter le jeton d'authentification.</target>
+      </trans-unit>
+      <trans-unit id="v_RS21A" resname="Aucune session disponible, celle-ci a expiré ou les cookies ne sont pas activés.">
+        <source>Aucune session disponible, celle-ci a expiré ou les cookies ne sont pas activés.</source>
+        <target>Aucune session disponible, celle-ci a expiré ou les cookies ne sont pas activés.</target>
+      </trans-unit>
+      <trans-unit id="EYCKpDH" resname="Aucun jeton n'a pu être trouvé.">
+        <source>Aucun jeton n'a pu être trouvé.</source>
+        <target>Aucun jeton n'a pu être trouvé.</target>
+      </trans-unit>
+      <trans-unit id="z3cOUZo" resname="Le nom d'utilisateur n'a pas pu être trouvé.">
+        <source>Le nom d'utilisateur n'a pas pu être trouvé.</source>
+        <target>Le nom d'utilisateur n'a pas pu être trouvé.</target>
+      </trans-unit>
+      <trans-unit id="By5eLYM" resname="Le compte a expiré.">
+        <source>Le compte a expiré.</source>
+        <target>Le compte a expiré.</target>
+      </trans-unit>
+      <trans-unit id="YfZhiuA" resname="Les identifiants ont expiré.">
+        <source>Les identifiants ont expiré.</source>
+        <target>Les identifiants ont expiré.</target>
+      </trans-unit>
+      <trans-unit id="NrSSfLs" resname="Le compte est désactivé.">
+        <source>Le compte est désactivé.</source>
+        <target>Le compte est désactivé.</target>
+      </trans-unit>
+      <trans-unit id="O5ZyxHr" resname="Le compte est bloqué.">
+        <source>Le compte est bloqué.</source>
+        <target>Le compte est bloqué.</target>
+      </trans-unit>
+      <trans-unit id="gd.MOnZ" resname="Plusieurs tentatives de connexion ont échoué, veuillez réessayer plus tard.">
+        <source>Plusieurs tentatives de connexion ont échoué, veuillez réessayer plus tard.</source>
+        <target>Plusieurs tentatives de connexion ont échoué, veuillez réessayer plus tard.</target>
+      </trans-unit>
+      <trans-unit id="l9VYRj0" resname="Lien de connexion invalide ou expiré.">
+        <source>Lien de connexion invalide ou expiré.</source>
+        <target>Lien de connexion invalide ou expiré.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
