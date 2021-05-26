@@ -168,6 +168,11 @@ class Candidat implements UserInterface
         return $this->login;
     }
 
+    public function getName()
+    {
+        return $this->firstname." ".$this->lastname;
+    }
+
     public function isVerified(): bool
     {
         return $this->isVerified;
