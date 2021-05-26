@@ -7,11 +7,12 @@
     <div class="col-sm-1-12">
         <p>{{ app.user.username }}</p>
         <ul>
+            <li>{{ app.user.name }}</li>
+            <li><p>Année(s) d'expérience : </p>{{ app.user.experience }}</li>
             <li><i class="fas fa-file-contract"></i> {{ candidat[0].nmbPostule  }}</li>
             {% for candidat in candidat %}
             <li>{{ candidat.libelleOffre  }} </li>
             {% endfor %}
-            <li>{{ app.user.name }}</li>
         </ul>
     </div>
 </div>

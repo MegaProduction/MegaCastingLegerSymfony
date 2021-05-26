@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use function Symfony\Component\Translation\t;
+
 /**
  * Candidat
  *
@@ -70,6 +72,24 @@ class Candidat implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Experience", type="integer", nullable=true)
+     */
+    private $experience;
+
+    public function setExperience(int $experience):self
+    {
+        $this->experience = $experience;
+        return $this;
+    }
+
+    public function getExperience(): ?int
+    {
+        return $this->experience;
+    }
 
     public function setIdentifiant(int $identifiant): self
     {
